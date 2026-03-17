@@ -1,0 +1,262 @@
+/* ==============================
+   COMPONENT-LEVEL TOKENS
+   Semantic tokens for each component that reference base tokens.
+   Every visual property is traceable back to a design decision.
+   ============================== */
+
+:root {
+  /* ─── Button ─── */
+  --button-radius: var(--radius-md);
+  --button-font-size: var(--text-sm);
+  --button-font-weight: var(--font-weight-medium);
+  --button-line-height: var(--leading-normal);
+  --button-shadow: var(--shadow-xs);
+  --button-icon-size: 1rem;                     /* 16px — matches text-sm */
+
+  /* Button: default size */
+  --button-height: 2.25rem;                     /* 36px = 9 * spacing */
+  --button-padding-x: 1rem;                     /* 16px = 4 * spacing */
+  --button-padding-y: 0.5rem;                   /* 8px  = 2 * spacing */
+
+  /* Button: sm */
+  --button-sm-height: 2rem;                     /* 32px = 8 * spacing */
+  --button-sm-padding-x: 0.75rem;              /* 12px = 3 * spacing */
+  --button-sm-font-size: var(--text-xs);
+  --button-sm-radius: var(--radius-md);
+
+  /* Button: lg */
+  --button-lg-height: 2.5rem;                  /* 40px = 10 * spacing */
+  --button-lg-padding-x: 2rem;                 /* 32px = 8 * spacing */
+
+  /* Button: icon */
+  --button-icon-only-size: 2.25rem;            /* 36px = 9 * spacing */
+
+  /* ─── Input ─── */
+  --input-height: 2.25rem;                     /* 36px = 9 * spacing */
+  --input-radius: var(--radius-md);
+  --input-padding-x: 0.75rem;                 /* 12px = 3 * spacing */
+  --input-padding-y: 0.25rem;                 /* 4px  = 1 * spacing */
+  --input-font-size: var(--text-sm);
+  --input-shadow: var(--shadow-xs);
+  --input-border-color: var(--input);
+  --input-bg: var(--background);
+  --input-placeholder-color: var(--muted-foreground);
+  --input-focus-ring-color: var(--ring);
+
+  /* ─── Textarea ─── */
+  --textarea-min-height: 5rem;                 /* 80px = 20 * spacing */
+  --textarea-radius: var(--radius-md);
+  --textarea-padding-x: 0.75rem;
+  --textarea-padding-y: 0.5rem;
+  --textarea-font-size: var(--text-sm);
+
+  /* ─── Label ─── */
+  --label-font-size: var(--text-sm);
+  --label-font-weight: var(--font-weight-medium);
+  --label-line-height: var(--leading-none);
+
+  /* ─── Card ─── */
+  --card-radius: var(--radius-xl);
+  --card-shadow: var(--shadow-sm);
+  --card-bg: var(--card);
+  --card-fg: var(--card-foreground);
+  --card-border-color: var(--border);
+  --card-padding: 1.5rem;                     /* 24px = 6 * spacing */
+  --card-header-gap: 0.375rem;                /* 6px  = 1.5 * spacing */
+  --card-title-font-size: var(--text-lg);
+  --card-title-font-weight: var(--font-weight-semibold);
+  --card-description-font-size: var(--text-sm);
+
+  /* ─── Badge ─── */
+  --badge-radius: var(--radius-md);
+  --badge-font-size: var(--text-xs);
+  --badge-font-weight: var(--font-weight-semibold);
+  --badge-padding-x: 0.625rem;               /* 10px = 2.5 * spacing */
+  --badge-padding-y: 0.125rem;               /* 2px  = 0.5 * spacing */
+
+  /* ─── Avatar ─── */
+  --avatar-size: 2.5rem;                      /* 40px = 10 * spacing */
+  --avatar-radius: var(--radius-full);
+  --avatar-font-size: var(--text-sm);
+  --avatar-font-weight: var(--font-weight-medium);
+  --avatar-bg: var(--muted);
+  --avatar-fg: var(--muted-foreground);
+
+  /* ─── Separator ─── */
+  --separator-color: var(--border);
+  --separator-thickness: 1px;
+
+  /* ─── Dialog ─── */
+  --dialog-radius: var(--radius-lg);
+  --dialog-shadow: var(--shadow-lg);
+  --dialog-padding: 1.5rem;                   /* 24px = 6 * spacing */
+  --dialog-max-width: 32rem;                  /* 512px = lg */
+  --dialog-bg: var(--background);
+  --dialog-border-color: var(--border);
+  --dialog-overlay-bg: rgba(0, 0, 0, 0.8);
+  --dialog-title-font-size: var(--text-lg);
+  --dialog-title-font-weight: var(--font-weight-semibold);
+  --dialog-description-font-size: var(--text-sm);
+
+  /* ─── Sheet ─── */
+  --sheet-padding: 1.5rem;
+  --sheet-shadow: var(--shadow-lg);
+  --sheet-bg: var(--background);
+  --sheet-max-width: 24rem;                   /* sm = 384px */
+
+  /* ─── Alert ─── */
+  --alert-radius: var(--radius-lg);
+  --alert-padding: 1rem;                      /* 16px = 4 * spacing */
+  --alert-bg: var(--background);
+  --alert-fg: var(--foreground);
+  --alert-title-font-weight: var(--font-weight-medium);
+  --alert-description-font-size: var(--text-sm);
+
+  /* ─── Tooltip ─── */
+  --tooltip-radius: var(--radius-md);
+  --tooltip-padding-x: 0.75rem;
+  --tooltip-padding-y: 0.375rem;
+  --tooltip-font-size: var(--text-xs);
+  --tooltip-bg: var(--primary);
+  --tooltip-fg: var(--primary-foreground);
+  --tooltip-shadow: var(--shadow-md);
+
+  /* ─── Select ─── */
+  --select-trigger-height: 2.25rem;
+  --select-trigger-radius: var(--radius-md);
+  --select-trigger-padding-x: 0.75rem;
+  --select-trigger-font-size: var(--text-sm);
+  --select-trigger-shadow: var(--shadow-xs);
+  --select-content-radius: var(--radius-md);
+  --select-content-shadow: var(--shadow-md);
+  --select-content-padding: 0.25rem;
+  --select-item-radius: var(--radius-sm);
+  --select-item-padding-x: 0.5rem;
+  --select-item-padding-y: 0.375rem;
+  --select-item-font-size: var(--text-sm);
+
+  /* ─── Tabs ─── */
+  --tabs-list-height: 2.25rem;
+  --tabs-list-radius: var(--radius-lg);
+  --tabs-list-padding: 0.25rem;
+  --tabs-list-bg: var(--muted);
+  --tabs-trigger-radius: var(--radius-md);
+  --tabs-trigger-padding-x: 0.75rem;
+  --tabs-trigger-padding-y: 0.25rem;
+  --tabs-trigger-font-size: var(--text-sm);
+  --tabs-trigger-font-weight: var(--font-weight-medium);
+
+  /* ─── Checkbox ─── */
+  --checkbox-size: 1rem;                      /* 16px = 4 * spacing */
+  --checkbox-radius: var(--radius-sm);
+  --checkbox-border-color: var(--primary);
+  --checkbox-bg: var(--primary);
+  --checkbox-fg: var(--primary-foreground);
+
+  /* ─── Radio ─── */
+  --radio-size: 1rem;
+  --radio-dot-size: 0.5rem;
+  --radio-border-color: var(--primary);
+  --radio-bg: var(--primary);
+
+  /* ─── Switch ─── */
+  --switch-height: 1.25rem;                   /* 20px = 5 * spacing */
+  --switch-width: 2.25rem;                    /* 36px = 9 * spacing */
+  --switch-thumb-size: 1rem;                  /* 16px = 4 * spacing */
+  --switch-bg-off: var(--input);
+  --switch-bg-on: var(--primary);
+  --switch-thumb-bg: var(--background);
+
+  /* ─── Progress ─── */
+  --progress-height: 0.5rem;                  /* 8px = 2 * spacing */
+  --progress-radius: var(--radius-full);
+  --progress-track-bg: var(--primary);
+  --progress-bg: color-mix(in srgb, var(--primary) 20%, transparent);
+
+  /* ─── Slider ─── */
+  --slider-track-height: 0.375rem;            /* 6px = 1.5 * spacing */
+  --slider-thumb-size: 1rem;
+  --slider-thumb-border-color: color-mix(in srgb, var(--primary) 50%, transparent);
+  --slider-thumb-bg: var(--background);
+
+  /* ─── Table ─── */
+  --table-font-size: var(--text-sm);
+  --table-head-height: 2.5rem;               /* 40px = 10 * spacing */
+  --table-head-font-weight: var(--font-weight-medium);
+  --table-head-fg: var(--muted-foreground);
+  --table-cell-padding-x: 0.5rem;
+  --table-cell-padding-y: 0.5rem;
+  --table-row-border-color: var(--border);
+  --table-row-hover-bg: color-mix(in srgb, var(--muted) 50%, transparent);
+  --table-row-selected-bg: var(--muted);
+
+  /* ─── Skeleton ─── */
+  --skeleton-radius: var(--radius-md);
+  --skeleton-bg: color-mix(in srgb, var(--primary) 10%, transparent);
+
+  /* ─── Popover ─── */
+  --popover-radius: var(--radius-md);
+  --popover-shadow: var(--shadow-md);
+  --popover-padding: 1rem;
+  --popover-bg: var(--popover);
+  --popover-fg: var(--popover-foreground);
+  --popover-border-color: var(--border);
+
+  /* ─── Accordion ─── */
+  --accordion-trigger-padding-y: 1rem;
+  --accordion-trigger-font-size: var(--text-sm);
+  --accordion-trigger-font-weight: var(--font-weight-medium);
+  --accordion-content-font-size: var(--text-sm);
+  --accordion-content-padding-bottom: 1rem;
+  --accordion-border-color: var(--border);
+
+  /* ─── Breadcrumb ─── */
+  --breadcrumb-font-size: var(--text-sm);
+  --breadcrumb-separator-fg: var(--muted-foreground);
+  --breadcrumb-link-fg: var(--muted-foreground);
+  --breadcrumb-page-fg: var(--foreground);
+
+  /* ─── Pagination ─── */
+  --pagination-item-size: 2.25rem;
+  --pagination-item-radius: var(--radius-md);
+  --pagination-font-size: var(--text-sm);
+
+  /* ─── Dropdown / Context Menu ─── */
+  --menu-radius: var(--radius-md);
+  --menu-shadow: var(--shadow-md);
+  --menu-padding: 0.25rem;
+  --menu-item-radius: var(--radius-sm);
+  --menu-item-padding-x: 0.5rem;
+  --menu-item-padding-y: 0.375rem;
+  --menu-item-font-size: var(--text-sm);
+  --menu-separator-color: var(--muted);
+
+  /* ─── Navigation Menu ─── */
+  --nav-trigger-padding-x: 1rem;
+  --nav-trigger-padding-y: 0.5rem;
+  --nav-trigger-font-size: var(--text-sm);
+  --nav-trigger-font-weight: var(--font-weight-medium);
+  --nav-trigger-radius: var(--radius-md);
+
+  /* ─── Drawer ─── */
+  --drawer-radius: 0.625rem;                 /* 10px */
+  --drawer-handle-width: 6.25rem;            /* 100px */
+  --drawer-handle-height: 0.375rem;
+  --drawer-handle-bg: var(--muted);
+
+  /* ─── Toast ─── */
+  --toast-radius: var(--radius-md);
+  --toast-shadow: var(--shadow-lg);
+  --toast-padding: 1rem;
+  --toast-bg: var(--background);
+  --toast-fg: var(--foreground);
+  --toast-border-color: var(--border);
+  --toast-title-font-size: var(--text-sm);
+  --toast-title-font-weight: var(--font-weight-semibold);
+  --toast-description-font-size: var(--text-sm);
+
+  /* ─── Focus Ring (global) ─── */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: var(--ring);
+}

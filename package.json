@@ -1,0 +1,24 @@
+{
+  "name": "fan-tokens-monorepo",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.30.0",
+  "scripts": {
+    "dev": "pnpm --filter @fan-tokens/docs dev",
+    "build": "pnpm --filter fan-tokens build",
+    "build:docs": "pnpm --filter @fan-tokens/docs build",
+    "lint": "eslint .",
+    "typecheck": "pnpm --filter fan-tokens typecheck",
+    "test": "pnpm --filter fan-tokens test",
+    "test:ci": "pnpm --filter fan-tokens test:run"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.4.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.56.1"
+  }
+}
