@@ -1,0 +1,49 @@
+import { Meta } from "@storybook/blocks"
+
+<Meta title="Getting Started/Welcome" />
+
+# Fan Tokens Design System
+
+A comprehensive, token-driven React component library built with **Tailwind CSS 4**, **CSS custom properties**, and **class-variance-authority**.
+
+## Overview
+
+Fan Tokens provides **44 production-ready components** designed for building modern web applications. Every component is:
+
+- **Token-driven** — colors, spacing, radii, shadows, and typography are all CSS custom properties
+- **Themeable** — swap tokens to create any brand identity, including dark mode
+- **Tree-shakeable** — import only what you use via granular sub-path exports
+- **Accessible** — keyboard navigation, ARIA attributes, and focus management built-in
+- **Type-safe** — full TypeScript support with exported prop types
+
+## Component Categories
+
+| Category | Components | Description |
+|---|---|---|
+| **Data Display** | Accordion, Avatar, Badge, Card, Table, Calendar, Carousel, Progress, Separator, Skeleton, Aspect Ratio | Present information and data |
+| **Data Input** | Button, Checkbox, Input, Input OTP, Label, Radio Group, Select, Slider, Switch, Textarea, Toggle, Toggle Group, Form | Capture user input |
+| **Feedback** | Alert, Alert Dialog, Dialog, Drawer, Sheet, Toast, Tooltip, Hover Card, Popover | Communicate status and messages |
+| **Layout** | Collapsible, Resizable, Scroll Area, Sidebar | Structure and organize content |
+| **Navigation** | Breadcrumb, Command, Context Menu, Dropdown Menu, Menubar, Navigation Menu, Pagination, Tabs | Help users move through the app |
+
+## Quick Start
+
+```bash
+npm install fan-tokens
+```
+
+```tsx
+import { Button } from "fan-tokens"
+
+function App() {
+  return <Button variant="default">Click me</Button>
+}
+```
+
+## Tech Stack
+
+- **React 18/19** — supports both versions
+- **Tailwind CSS 4** — utility-first styling with v4 `@theme` tokens
+- **CVA** — class-variance-authority for type-safe variants
+- **Radix Slot** — `asChild` prop pattern for composition
+- **Vite** — library mode build with tree-shaking

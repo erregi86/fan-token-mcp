@@ -1,0 +1,1 @@
+var e={parameters:{controls:{matchers:{color:/(background|color)$/i,date:/Date$/i}},layout:`centered`,options:{storySort:{order:[`Getting Started`,[`Welcome`,`Installation`,`Theming`],`Components`,[`Data Display`,`Data Input`,`Feedback`,`Layout`,`Navigation`,`Overlay`]]}}}};export{e as default};

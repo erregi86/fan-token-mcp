@@ -1,0 +1,29 @@
+import{s as e}from"./iframe-D9gJDq8P.js";import{t}from"./jsx-runtime-C9onxGo1.js";import{t as n}from"./react-DdA8jN9n.js";import{t as r}from"./utils-D-KFxwDU.js";var i=e(n(),1),a=t();function o({direction:e=`horizontal`,className:t,children:n,...i}){return(0,a.jsx)(`div`,{"data-slot":`resizable-panel-group`,"data-direction":e,className:r(`flex h-full w-full`,e===`horizontal`?`flex-row`:`flex-col`,t),...i,children:n})}function s({defaultSize:e=50,minSize:t=10,maxSize:n=90,className:i,style:o,...s}){return(0,a.jsx)(`div`,{"data-slot":`resizable-panel`,className:r(`flex-1 overflow-auto`,i),style:{flexBasis:`${e}%`,minWidth:`${t}%`,maxWidth:`${n}%`,...o},...s})}function c({withHandle:e=!1,className:t,...n}){let o=(0,i.useRef)(null),[s,c]=(0,i.useState)(!1),l=(0,i.useCallback)(e=>{e.preventDefault(),c(!0);let t=o.current?.parentElement;if(!t)return;let n=t.dataset.direction||`horizontal`,r=Array.from(t.children).filter(e=>e.dataset.slot===`resizable-panel`),i=Array.from(t.children).indexOf(o.current),a=r[Math.floor(i/2)],s=r[Math.floor(i/2)+1];if(!a||!s)return;let l=e.clientX,u=e.clientY,d=a.getBoundingClientRect().width,f=a.getBoundingClientRect().height,p=t.getBoundingClientRect().width,m=t.getBoundingClientRect().height,h=e=>{if(n===`horizontal`){let t=(d+(e.clientX-l))/p*100;a.style.flexBasis=`${Math.max(10,Math.min(90,t))}%`}else{let t=(f+(e.clientY-u))/m*100;a.style.flexBasis=`${Math.max(10,Math.min(90,t))}%`}},g=()=>{c(!1),document.removeEventListener(`mousemove`,h),document.removeEventListener(`mouseup`,g)};document.addEventListener(`mousemove`,h),document.addEventListener(`mouseup`,g)},[]);return(0,a.jsx)(`div`,{ref:o,"data-slot":`resizable-handle`,className:r(`relative flex w-px items-center justify-center bg-border after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1`,`[&[data-direction=vertical]]:h-px [&[data-direction=vertical]]:w-full`,s&&`bg-ring`,t),onMouseDown:l,...n,children:e&&(0,a.jsx)(`div`,{className:`z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border`,children:(0,a.jsxs)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,width:`8`,height:`8`,viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:`2`,children:[(0,a.jsx)(`circle`,{cx:`9`,cy:`12`,r:`1`}),(0,a.jsx)(`circle`,{cx:`15`,cy:`12`,r:`1`})]})})})}o.__docgenInfo={description:``,methods:[],displayName:`ResizablePanelGroup`,props:{direction:{required:!1,tsType:{name:`union`,raw:`"horizontal" | "vertical"`,elements:[{name:`literal`,value:`"horizontal"`},{name:`literal`,value:`"vertical"`}]},description:``,defaultValue:{value:`"horizontal"`,computed:!1}}}},s.__docgenInfo={description:``,methods:[],displayName:`ResizablePanel`,props:{defaultSize:{required:!1,tsType:{name:`number`},description:``,defaultValue:{value:`50`,computed:!1}},minSize:{required:!1,tsType:{name:`number`},description:``,defaultValue:{value:`10`,computed:!1}},maxSize:{required:!1,tsType:{name:`number`},description:``,defaultValue:{value:`90`,computed:!1}}}},c.__docgenInfo={description:``,methods:[],displayName:`ResizableHandle`,props:{withHandle:{required:!1,tsType:{name:`boolean`},description:``,defaultValue:{value:`false`,computed:!1}}}};var l={title:`Components/Layout/Resizable`,component:o,tags:[`autodocs`]},u={render:()=>(0,a.jsxs)(o,{direction:`horizontal`,className:`max-w-md rounded-lg border`,children:[(0,a.jsx)(s,{defaultSize:50,children:(0,a.jsx)(`div`,{className:`flex h-[200px] items-center justify-center p-6`,children:(0,a.jsx)(`span`,{className:`font-semibold`,children:`One`})})}),(0,a.jsx)(c,{}),(0,a.jsx)(s,{defaultSize:50,children:(0,a.jsx)(`div`,{className:`flex h-[200px] items-center justify-center p-6`,children:(0,a.jsx)(`span`,{className:`font-semibold`,children:`Two`})})})]})},d={render:()=>(0,a.jsxs)(o,{direction:`vertical`,className:`max-w-md rounded-lg border`,children:[(0,a.jsx)(s,{defaultSize:50,children:(0,a.jsx)(`div`,{className:`flex h-[100px] items-center justify-center p-6`,children:(0,a.jsx)(`span`,{className:`font-semibold`,children:`Top`})})}),(0,a.jsx)(c,{}),(0,a.jsx)(s,{defaultSize:50,children:(0,a.jsx)(`div`,{className:`flex h-[100px] items-center justify-center p-6`,children:(0,a.jsx)(`span`,{className:`font-semibold`,children:`Bottom`})})})]})};u.parameters={...u.parameters,docs:{...u.parameters?.docs,source:{originalSource:`{
+  render: () => <ResizablePanelGroup direction="horizontal" className="max-w-md rounded-lg border">
+      <ResizablePanel defaultSize={50}>
+        <div className="flex h-[200px] items-center justify-center p-6">
+          <span className="font-semibold">One</span>
+        </div>
+      </ResizablePanel>
+      <ResizableHandle />
+      <ResizablePanel defaultSize={50}>
+        <div className="flex h-[200px] items-center justify-center p-6">
+          <span className="font-semibold">Two</span>
+        </div>
+      </ResizablePanel>
+    </ResizablePanelGroup>
+}`,...u.parameters?.docs?.source}}},d.parameters={...d.parameters,docs:{...d.parameters?.docs,source:{originalSource:`{
+  render: () => <ResizablePanelGroup direction="vertical" className="max-w-md rounded-lg border">
+      <ResizablePanel defaultSize={50}>
+        <div className="flex h-[100px] items-center justify-center p-6">
+          <span className="font-semibold">Top</span>
+        </div>
+      </ResizablePanel>
+      <ResizableHandle />
+      <ResizablePanel defaultSize={50}>
+        <div className="flex h-[100px] items-center justify-center p-6">
+          <span className="font-semibold">Bottom</span>
+        </div>
+      </ResizablePanel>
+    </ResizablePanelGroup>
+}`,...d.parameters?.docs?.source}}};var f=[`Playground`,`Vertical`];export{u as Playground,d as Vertical,f as __namedExportsOrder,l as default};

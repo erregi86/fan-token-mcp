@@ -1,0 +1,23 @@
+import{t as e}from"./jsx-runtime-C9onxGo1.js";import{t}from"./utils-D-KFxwDU.js";var n=e();function r({className:e,...r}){return(0,n.jsx)(`div`,{className:`relative w-full overflow-auto`,children:(0,n.jsx)(`table`,{"data-slot":`table`,className:t(`w-full caption-bottom text-[length:var(--table-font-size)]`,e),...r})})}function i({className:e,...r}){return(0,n.jsx)(`thead`,{"data-slot":`table-header`,className:t(`[&_tr]:border-b`,e),...r})}function a({className:e,...r}){return(0,n.jsx)(`tbody`,{"data-slot":`table-body`,className:t(`[&_tr:last-child]:border-0`,e),...r})}function o({className:e,...r}){return(0,n.jsx)(`tfoot`,{"data-slot":`table-footer`,className:t(`border-t bg-[var(--table-row-hover-bg)] font-[number:var(--table-head-font-weight)] [&>tr]:last:border-b-0`,e),...r})}function s({className:e,...r}){return(0,n.jsx)(`tr`,{"data-slot":`table-row`,className:t(`border-b border-[var(--table-row-border-color)] transition-colors hover:bg-[var(--table-row-hover-bg)] data-[state=selected]:bg-[var(--table-row-selected-bg)]`,e),...r})}function c({className:e,...r}){return(0,n.jsx)(`th`,{"data-slot":`table-head`,className:t(`h-[var(--table-head-height)] px-[var(--table-cell-padding-x)] text-left align-middle font-[number:var(--table-head-font-weight)] text-[var(--table-head-fg)] [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]`,e),...r})}function l({className:e,...r}){return(0,n.jsx)(`td`,{"data-slot":`table-cell`,className:t(`px-[var(--table-cell-padding-x)] py-[var(--table-cell-padding-y)] align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]`,e),...r})}function u({className:e,...r}){return(0,n.jsx)(`caption`,{"data-slot":`table-caption`,className:t(`mt-4 text-[length:var(--table-font-size)] text-muted-foreground`,e),...r})}r.__docgenInfo={description:`Table tokens → components.css:
+--table-font-size, --table-head-height, --table-head-font-weight, --table-head-fg
+--table-cell-padding-x/y, --table-row-border-color, --table-row-hover-bg, --table-row-selected-bg`,methods:[],displayName:`Table`},i.__docgenInfo={description:``,methods:[],displayName:`TableHeader`},a.__docgenInfo={description:``,methods:[],displayName:`TableBody`},o.__docgenInfo={description:``,methods:[],displayName:`TableFooter`},s.__docgenInfo={description:``,methods:[],displayName:`TableRow`},c.__docgenInfo={description:``,methods:[],displayName:`TableHead`},l.__docgenInfo={description:``,methods:[],displayName:`TableCell`},u.__docgenInfo={description:``,methods:[],displayName:`TableCaption`};var d={title:`Components/Data Display/Table`,component:r,tags:[`autodocs`]},f=[{invoice:`INV001`,status:`Paid`,method:`Credit Card`,amount:`$250.00`},{invoice:`INV002`,status:`Pending`,method:`PayPal`,amount:`$150.00`},{invoice:`INV003`,status:`Unpaid`,method:`Bank Transfer`,amount:`$350.00`},{invoice:`INV004`,status:`Paid`,method:`Credit Card`,amount:`$450.00`},{invoice:`INV005`,status:`Paid`,method:`PayPal`,amount:`$550.00`}],p={render:()=>(0,n.jsxs)(r,{children:[(0,n.jsx)(u,{children:`A list of your recent invoices.`}),(0,n.jsx)(i,{children:(0,n.jsxs)(s,{children:[(0,n.jsx)(c,{className:`w-[100px]`,children:`Invoice`}),(0,n.jsx)(c,{children:`Status`}),(0,n.jsx)(c,{children:`Method`}),(0,n.jsx)(c,{className:`text-right`,children:`Amount`})]})}),(0,n.jsx)(a,{children:f.map(e=>(0,n.jsxs)(s,{children:[(0,n.jsx)(l,{className:`font-medium`,children:e.invoice}),(0,n.jsx)(l,{children:e.status}),(0,n.jsx)(l,{children:e.method}),(0,n.jsx)(l,{className:`text-right`,children:e.amount})]},e.invoice))})]})};p.parameters={...p.parameters,docs:{...p.parameters?.docs,source:{originalSource:`{
+  render: () => <Table>
+      <TableCaption>A list of your recent invoices.</TableCaption>
+      <TableHeader>
+        <TableRow>
+          <TableHead className="w-[100px]">Invoice</TableHead>
+          <TableHead>Status</TableHead>
+          <TableHead>Method</TableHead>
+          <TableHead className="text-right">Amount</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {invoices.map(inv => <TableRow key={inv.invoice}>
+            <TableCell className="font-medium">{inv.invoice}</TableCell>
+            <TableCell>{inv.status}</TableCell>
+            <TableCell>{inv.method}</TableCell>
+            <TableCell className="text-right">{inv.amount}</TableCell>
+          </TableRow>)}
+      </TableBody>
+    </Table>
+}`,...p.parameters?.docs?.source}}};var m=[`Playground`];export{p as Playground,m as __namedExportsOrder,d as default};

@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "typecheck": "pnpm --filter fan-tokens typecheck",
     "test": "pnpm --filter fan-tokens test",
-    "test:ci": "pnpm --filter fan-tokens test:run"
+    "test:ci": "pnpm --filter fan-tokens test:run",
+    "storybook": "pnpm --filter @fan-tokens/storybook storybook",
+    "build-storybook": "pnpm --filter @fan-tokens/storybook build-storybook"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",

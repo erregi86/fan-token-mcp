@@ -1,0 +1,24 @@
+import{t as e}from"./jsx-runtime-C9onxGo1.js";import{t}from"./utils-D-KFxwDU.js";var n=e();function r({className:e,...r}){return(0,n.jsx)(`nav`,{"data-slot":`pagination`,role:`navigation`,"aria-label":`pagination`,className:t(`mx-auto flex w-full justify-center`,e),...r})}function i({className:e,...r}){return(0,n.jsx)(`ul`,{"data-slot":`pagination-content`,className:t(`flex flex-row items-center gap-1`,e),...r})}function a({className:e,...t}){return(0,n.jsx)(`li`,{"data-slot":`pagination-item`,className:e,...t})}function o({className:e,isActive:r,size:i=`icon`,...a}){return(0,n.jsx)(`a`,{"data-slot":`pagination-link`,"aria-current":r?`page`:void 0,className:t(`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50`,r?`border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground`:`hover:bg-accent hover:text-accent-foreground`,i===`icon`?`size-9`:i===`sm`?`h-8 px-3`:i===`lg`?`h-10 px-8`:`h-9 px-4`,e),...a})}function s({className:e,...r}){return(0,n.jsxs)(o,{"data-slot":`pagination-previous`,"aria-label":`Go to previous page`,size:`default`,className:t(`gap-1 pl-2.5`,e),...r,children:[(0,n.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,width:`16`,height:`16`,viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:`2`,strokeLinecap:`round`,strokeLinejoin:`round`,children:(0,n.jsx)(`path`,{d:`m15 18-6-6 6-6`})}),(0,n.jsx)(`span`,{children:`Previous`})]})}function c({className:e,...r}){return(0,n.jsxs)(o,{"data-slot":`pagination-next`,"aria-label":`Go to next page`,size:`default`,className:t(`gap-1 pr-2.5`,e),...r,children:[(0,n.jsx)(`span`,{children:`Next`}),(0,n.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,width:`16`,height:`16`,viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:`2`,strokeLinecap:`round`,strokeLinejoin:`round`,children:(0,n.jsx)(`path`,{d:`m9 18 6-6-6-6`})})]})}function l({className:e,...r}){return(0,n.jsxs)(`span`,{"data-slot":`pagination-ellipsis`,"aria-hidden":!0,className:t(`flex size-9 items-center justify-center`,e),...r,children:[(0,n.jsxs)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,width:`16`,height:`16`,viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:`2`,strokeLinecap:`round`,strokeLinejoin:`round`,children:[(0,n.jsx)(`circle`,{cx:`12`,cy:`12`,r:`1`}),(0,n.jsx)(`circle`,{cx:`19`,cy:`12`,r:`1`}),(0,n.jsx)(`circle`,{cx:`5`,cy:`12`,r:`1`})]}),(0,n.jsx)(`span`,{className:`sr-only`,children:`More pages`})]})}r.__docgenInfo={description:``,methods:[],displayName:`Pagination`},i.__docgenInfo={description:``,methods:[],displayName:`PaginationContent`},a.__docgenInfo={description:``,methods:[],displayName:`PaginationItem`},o.__docgenInfo={description:``,methods:[],displayName:`PaginationLink`,props:{isActive:{required:!1,tsType:{name:`boolean`},description:``},size:{required:!1,tsType:{name:`union`,raw:`"default" | "sm" | "lg" | "icon"`,elements:[{name:`literal`,value:`"default"`},{name:`literal`,value:`"sm"`},{name:`literal`,value:`"lg"`},{name:`literal`,value:`"icon"`}]},description:``,defaultValue:{value:`"icon"`,computed:!1}}}},s.__docgenInfo={description:``,methods:[],displayName:`PaginationPrevious`},c.__docgenInfo={description:``,methods:[],displayName:`PaginationNext`},l.__docgenInfo={description:``,methods:[],displayName:`PaginationEllipsis`};var u={title:`Components/Navigation/Pagination`,component:r,tags:[`autodocs`]},d={render:()=>(0,n.jsx)(r,{children:(0,n.jsxs)(i,{children:[(0,n.jsx)(a,{children:(0,n.jsx)(s,{href:`#`})}),(0,n.jsx)(a,{children:(0,n.jsx)(o,{href:`#`,children:`1`})}),(0,n.jsx)(a,{children:(0,n.jsx)(o,{href:`#`,isActive:!0,children:`2`})}),(0,n.jsx)(a,{children:(0,n.jsx)(o,{href:`#`,children:`3`})}),(0,n.jsx)(a,{children:(0,n.jsx)(l,{})}),(0,n.jsx)(a,{children:(0,n.jsx)(c,{href:`#`})})]})})};d.parameters={...d.parameters,docs:{...d.parameters?.docs,source:{originalSource:`{
+  render: () => <Pagination>
+      <PaginationContent>
+        <PaginationItem>
+          <PaginationPrevious href="#" />
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#">1</PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#" isActive>2</PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#">3</PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationEllipsis />
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationNext href="#" />
+        </PaginationItem>
+      </PaginationContent>
+    </Pagination>
+}`,...d.parameters?.docs?.source}}};var f=[`Playground`];export{d as Playground,f as __namedExportsOrder,u as default};

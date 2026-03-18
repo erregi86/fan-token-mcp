@@ -1,0 +1,16 @@
+import{t as e}from"./jsx-runtime-C9onxGo1.js";import{t}from"./utils-D-KFxwDU.js";import{t as n}from"./label-4Kmerrob.js";var r=e();function i({className:e,checked:n=!1,onCheckedChange:i,disabled:a,...o}){return(0,r.jsx)(`button`,{"data-slot":`switch`,role:`switch`,"aria-checked":n,"data-state":n?`checked`:`unchecked`,disabled:a,className:t(`peer inline-flex h-[var(--switch-height)] w-[var(--switch-width)] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-[length:var(--focus-ring-width)] focus-visible:ring-[var(--focus-ring-color)] focus-visible:ring-offset-[length:var(--focus-ring-offset)] focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50`,n?`bg-[var(--switch-bg-on)]`:`bg-[var(--switch-bg-off)]`,e),onClick:()=>i?.(!n),...o,children:(0,r.jsx)(`span`,{"data-slot":`switch-thumb`,className:t(`pointer-events-none block size-[var(--switch-thumb-size)] rounded-full bg-[var(--switch-thumb-bg)] shadow-lg ring-0 transition-transform`,n?`translate-x-4`:`translate-x-0`)})})}i.__docgenInfo={description:``,methods:[],displayName:`Switch`,props:{checked:{required:!1,tsType:{name:`boolean`},description:``,defaultValue:{value:`false`,computed:!1}},onCheckedChange:{required:!1,tsType:{name:`signature`,type:`function`,raw:`(checked: boolean) => void`,signature:{arguments:[{type:{name:`boolean`},name:`checked`}],return:{name:`void`}}},description:``}},composes:[`Omit`]};var a={title:`Components/Data Input/Switch`,component:i,tags:[`autodocs`],argTypes:{disabled:{control:`boolean`},defaultChecked:{control:`boolean`}}},o={render:e=>(0,r.jsxs)(`div`,{className:`flex items-center space-x-2`,children:[(0,r.jsx)(i,{id:`airplane`,...e}),(0,r.jsx)(n,{htmlFor:`airplane`,children:`Airplane Mode`})]})},s={render:()=>(0,r.jsxs)(`div`,{className:`flex items-center space-x-2`,children:[(0,r.jsx)(i,{id:`active`,defaultChecked:!0}),(0,r.jsx)(n,{htmlFor:`active`,children:`Active`})]})},c={render:()=>(0,r.jsxs)(`div`,{className:`flex items-center space-x-2`,children:[(0,r.jsx)(i,{id:`off`,disabled:!0}),(0,r.jsx)(n,{htmlFor:`off`,className:`opacity-50`,children:`Disabled`})]})};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  render: args => <div className="flex items-center space-x-2">
+      <Switch id="airplane" {...args} />
+      <Label htmlFor="airplane">Airplane Mode</Label>
+    </div>
+}`,...o.parameters?.docs?.source}}},s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  render: () => <div className="flex items-center space-x-2">
+      <Switch id="active" defaultChecked />
+      <Label htmlFor="active">Active</Label>
+    </div>
+}`,...s.parameters?.docs?.source}}},c.parameters={...c.parameters,docs:{...c.parameters?.docs,source:{originalSource:`{
+  render: () => <div className="flex items-center space-x-2">
+      <Switch id="off" disabled />
+      <Label htmlFor="off" className="opacity-50">Disabled</Label>
+    </div>
+}`,...c.parameters?.docs?.source}}};var l=[`Playground`,`Checked`,`Disabled`];export{s as Checked,c as Disabled,o as Playground,l as __namedExportsOrder,a as default};

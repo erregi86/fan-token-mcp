@@ -1,0 +1,25 @@
+import{s as e}from"./iframe-D9gJDq8P.js";import{t}from"./jsx-runtime-C9onxGo1.js";import{t as n}from"./react-DdA8jN9n.js";import{t as r}from"./utils-D-KFxwDU.js";var i=e(n(),1),a=t();function o({maxLength:e,value:t,onChange:n,disabled:o,pattern:s=`^[0-9]*$`,className:c,...l}){let[u,d]=(0,i.useState)(``),f=t??u,p=(0,i.useRef)([]),m=(0,i.useCallback)(e=>{t===void 0&&d(e),n?.(e)},[t,n]),h=(t,n)=>{if(s&&!new RegExp(s).test(n))return;let r=f.split(``);r[t]=n,m(r.join(``).slice(0,e)),t<e-1&&p.current[t+1]?.focus()},g=(t,n)=>{if(n.key===`Backspace`){n.preventDefault();let e=f.split(``);e[t]?(e[t]=``,m(e.join(``))):t>0&&(e[t-1]=``,m(e.join(``)),p.current[t-1]?.focus())}else n.key===`ArrowLeft`&&t>0?p.current[t-1]?.focus():n.key===`ArrowRight`&&t<e-1&&p.current[t+1]?.focus()},_=t=>{t.preventDefault();let n=t.clipboardData.getData(`text`).slice(0,e);if(s&&!new RegExp(s).test(n))return;m(n);let r=Math.min(n.length,e-1);p.current[r]?.focus()};return(0,a.jsx)(`div`,{"data-slot":`input-otp`,className:r(`flex items-center gap-2`,o&&`opacity-50`,c),onPaste:_,...l,children:Array.from({length:e}).map((e,t)=>(0,a.jsx)(`input`,{ref:e=>{p.current[t]=e},type:`text`,inputMode:`numeric`,maxLength:1,disabled:o,value:f[t]??``,className:r(`flex size-10 items-center justify-center rounded-md border border-input bg-background text-center text-sm shadow-sm transition-all`,`focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring`,`disabled:cursor-not-allowed`),onChange:e=>{let n=e.target.value.slice(-1);n&&h(t,n)},onKeyDown:e=>g(t,e)},t))})}function s({className:e,...t}){return(0,a.jsx)(`div`,{"data-slot":`input-otp-group`,className:r(`flex items-center`,e),...t})}function c({char:e,isActive:t,className:n,...i}){return(0,a.jsx)(`div`,{"data-slot":`input-otp-slot`,className:r(`relative flex size-10 items-center justify-center border-y border-r border-input text-sm shadow-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md`,t&&`z-10 ring-2 ring-ring`,n),...i,children:e??(0,a.jsx)(`div`,{className:`absolute inset-0 flex items-center justify-center`,children:(0,a.jsx)(`div`,{className:`h-4 w-px animate-pulse bg-foreground`})})})}function l({className:e,...t}){return(0,a.jsx)(`div`,{"data-slot":`input-otp-separator`,role:`separator`,className:r(`flex items-center px-1 text-muted-foreground`,e),...t,children:(0,a.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,width:`8`,height:`8`,viewBox:`0 0 24 24`,fill:`currentColor`,children:(0,a.jsx)(`circle`,{cx:`12`,cy:`12`,r:`4`})})})}o.__docgenInfo={description:``,methods:[],displayName:`InputOTP`,props:{maxLength:{required:!0,tsType:{name:`number`},description:``},value:{required:!1,tsType:{name:`string`},description:``},onChange:{required:!1,tsType:{name:`signature`,type:`function`,raw:`(value: string) => void`,signature:{arguments:[{type:{name:`string`},name:`value`}],return:{name:`void`}}},description:``},disabled:{required:!1,tsType:{name:`boolean`},description:``},pattern:{required:!1,tsType:{name:`string`},description:``,defaultValue:{value:`"^[0-9]*$"`,computed:!1}}},composes:[`Omit`]},s.__docgenInfo={description:``,methods:[],displayName:`InputOTPGroup`},c.__docgenInfo={description:``,methods:[],displayName:`InputOTPSlot`,props:{char:{required:!1,tsType:{name:`string`},description:``},isActive:{required:!1,tsType:{name:`boolean`},description:``}}},l.__docgenInfo={description:``,methods:[],displayName:`InputOTPSeparator`};var u={title:`Components/Data Input/InputOTP`,component:o,tags:[`autodocs`]},d={render:()=>(0,a.jsxs)(o,{maxLength:6,children:[(0,a.jsxs)(s,{children:[(0,a.jsx)(c,{index:0}),(0,a.jsx)(c,{index:1}),(0,a.jsx)(c,{index:2})]}),(0,a.jsx)(l,{}),(0,a.jsxs)(s,{children:[(0,a.jsx)(c,{index:3}),(0,a.jsx)(c,{index:4}),(0,a.jsx)(c,{index:5})]})]})},f={name:`4-Digit Code`,render:()=>(0,a.jsx)(o,{maxLength:4,children:(0,a.jsxs)(s,{children:[(0,a.jsx)(c,{index:0}),(0,a.jsx)(c,{index:1}),(0,a.jsx)(c,{index:2}),(0,a.jsx)(c,{index:3})]})})};d.parameters={...d.parameters,docs:{...d.parameters?.docs,source:{originalSource:`{
+  render: () => <InputOTP maxLength={6}>
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+      </InputOTPGroup>
+      <InputOTPSeparator />
+      <InputOTPGroup>
+        <InputOTPSlot index={3} />
+        <InputOTPSlot index={4} />
+        <InputOTPSlot index={5} />
+      </InputOTPGroup>
+    </InputOTP>
+}`,...d.parameters?.docs?.source}}},f.parameters={...f.parameters,docs:{...f.parameters?.docs,source:{originalSource:`{
+  name: "4-Digit Code",
+  render: () => <InputOTP maxLength={4}>
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+        <InputOTPSlot index={3} />
+      </InputOTPGroup>
+    </InputOTP>
+}`,...f.parameters?.docs?.source}}};var p=[`Playground`,`FourDigits`];export{f as FourDigits,d as Playground,p as __namedExportsOrder,u as default};

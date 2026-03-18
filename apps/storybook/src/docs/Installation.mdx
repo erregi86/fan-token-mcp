@@ -1,0 +1,77 @@
+import { Meta } from "@storybook/blocks"
+
+<Meta title="Getting Started/Installation" />
+
+# Installation
+
+## Install the package
+
+```bash
+# npm
+npm install fan-tokens
+
+# pnpm
+pnpm add fan-tokens
+
+# yarn
+yarn add fan-tokens
+```
+
+## Peer Dependencies
+
+Fan Tokens requires React 18 or 19:
+
+```bash
+npm install react react-dom
+```
+
+## Setup Tailwind CSS 4
+
+Fan Tokens uses Tailwind CSS 4 with CSS custom property tokens. Add the token import and source directive to your CSS entry point:
+
+```css
+/* src/index.css */
+@import "tailwindcss";
+@import "fan-tokens/tokens";
+
+/* Required: tell Tailwind to scan component source for class names */
+@source "../../node_modules/fan-tokens/dist";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+```
+
+> **Important:** The `@source` directive is critical. Without it, Tailwind v4 won't generate CSS for classes used inside fan-tokens components.
+
+## Import Components
+
+### Named imports (barrel)
+
+```tsx
+import { Button, Card, CardHeader, CardTitle } from "fan-tokens"
+```
+
+### Sub-path imports (tree-shaking)
+
+```tsx
+import { Button } from "fan-tokens/button"
+import { Card, CardHeader, CardTitle } from "fan-tokens/card"
+```
+
+## Utility Function
+
+Fan Tokens exports a `cn()` utility for merging Tailwind classes:
+
+```tsx
+import { cn } from "fan-tokens/lib/utils"
+
+<div className={cn("p-4 rounded-lg", isActive && "bg-primary")} />
+```

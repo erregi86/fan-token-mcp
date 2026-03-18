@@ -1,0 +1,32 @@
+import{s as e}from"./iframe-D9gJDq8P.js";import{t}from"./jsx-runtime-C9onxGo1.js";import{t as n}from"./react-DdA8jN9n.js";import{t as r}from"./utils-D-KFxwDU.js";import{t as i}from"./label-4Kmerrob.js";var a=e(n(),1),o=t(),s=(0,a.createContext)(null);function c(){let e=(0,a.useContext)(s);if(!e)throw Error(`Select components must be used within <Select>`);return e}function l({children:e,value:t,onValueChange:n,defaultValue:r=``}){let[i,c]=(0,a.useState)(!1),[l,u]=(0,a.useState)(r),d=t!==void 0,f=d?t:l,p=(0,a.useCallback)(e=>{d||u(e),n?.(e),c(!1)},[d,n]);return(0,o.jsx)(s.Provider,{value:{open:i,setOpen:c,value:f,onValueChange:p},children:(0,o.jsx)(`div`,{"data-slot":`select`,className:`relative`,children:e})})}function u({className:e,children:t,...n}){let{open:i,setOpen:a,value:s}=c();return(0,o.jsxs)(`button`,{"data-slot":`select-trigger`,type:`button`,role:`combobox`,"aria-expanded":i,className:r(`flex h-[var(--select-trigger-height)] w-full items-center justify-between rounded-[var(--select-trigger-radius)] border border-[var(--input-border-color)] bg-[var(--input-bg)] px-[var(--select-trigger-padding-x)] py-2 text-[length:var(--select-trigger-font-size)] shadow-[var(--select-trigger-shadow)]`,`placeholder:text-[var(--input-placeholder-color)] focus:outline-none focus:ring-[length:var(--focus-ring-width)] focus:ring-[var(--focus-ring-color)]`,`disabled:cursor-not-allowed disabled:opacity-50`,e),onClick:()=>a(!i),...n,children:[t??s??(0,o.jsx)(`span`,{className:`text-muted-foreground`,children:`Select...`}),(0,o.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,width:`16`,height:`16`,viewBox:`0 0 24 24`,fill:`none`,stroke:`currentColor`,strokeWidth:`2`,strokeLinecap:`round`,strokeLinejoin:`round`,className:`ml-2 opacity-50`,children:(0,o.jsx)(`path`,{d:`m6 9 6 6 6-6`})})]})}function d({className:e,children:t,...n}){let{open:i,setOpen:s}=c(),l=(0,a.useRef)(null);return(0,a.useEffect)(()=>{let e=e=>{l.current&&!l.current.parentElement?.contains(e.target)&&s(!1)};return i&&document.addEventListener(`mousedown`,e),()=>document.removeEventListener(`mousedown`,e)},[i,s]),i?(0,o.jsx)(`div`,{ref:l,"data-slot":`select-content`,className:r(`absolute z-50 mt-1 max-h-60 w-full overflow-auto rounded-[var(--select-content-radius)] border border-[var(--popover-border-color)] bg-[var(--popover-bg)] p-[var(--select-content-padding)] text-[var(--popover-fg)] shadow-[var(--select-content-shadow)] animate-fade-in`,e),...n,children:t}):null}function f({className:e,value:t,children:n,...i}){let{value:a,onValueChange:s}=c(),l=a===t;return(0,o.jsx)(`div`,{"data-slot":`select-item`,role:`option`,"aria-selected":l,className:r(`relative flex cursor-pointer select-none items-center rounded-[var(--select-item-radius)] px-[var(--select-item-padding-x)] py-[var(--select-item-padding-y)] text-[length:var(--select-item-font-size)] outline-none`,`hover:bg-accent hover:text-accent-foreground`,l&&`bg-accent text-accent-foreground`,e),onClick:()=>s(t),...i,children:n})}l.__docgenInfo={description:``,methods:[],displayName:`Select`,props:{children:{required:!0,tsType:{name:`ReactReactNode`,raw:`React.ReactNode`},description:``},value:{required:!1,tsType:{name:`string`},description:``},onValueChange:{required:!1,tsType:{name:`signature`,type:`function`,raw:`(value: string) => void`,signature:{arguments:[{type:{name:`string`},name:`value`}],return:{name:`void`}}},description:``},defaultValue:{required:!1,tsType:{name:`string`},description:``,defaultValue:{value:`""`,computed:!1}}}},u.__docgenInfo={description:``,methods:[],displayName:`SelectTrigger`},d.__docgenInfo={description:``,methods:[],displayName:`SelectContent`},f.__docgenInfo={description:``,methods:[],displayName:`SelectItem`,props:{value:{required:!0,tsType:{name:`string`},description:``}}};var p={title:`Components/Data Input/Select`,component:l,tags:[`autodocs`]},m={render:()=>(0,o.jsxs)(l,{children:[(0,o.jsx)(u,{className:`w-[200px]`,children:`Select a fruit`}),(0,o.jsxs)(d,{children:[(0,o.jsx)(f,{value:`apple`,children:`Apple`}),(0,o.jsx)(f,{value:`banana`,children:`Banana`}),(0,o.jsx)(f,{value:`cherry`,children:`Cherry`}),(0,o.jsx)(f,{value:`grape`,children:`Grape`})]})]})},h={name:`With Label`,render:()=>(0,o.jsxs)(`div`,{className:`grid w-full max-w-sm gap-1.5`,children:[(0,o.jsx)(i,{children:`Timezone`}),(0,o.jsxs)(l,{children:[(0,o.jsx)(u,{children:`Select timezone`}),(0,o.jsxs)(d,{children:[(0,o.jsx)(f,{value:`utc`,children:`UTC`}),(0,o.jsx)(f,{value:`est`,children:`Eastern (EST)`}),(0,o.jsx)(f,{value:`cst`,children:`Central (CST)`}),(0,o.jsx)(f,{value:`pst`,children:`Pacific (PST)`})]})]})]})},g={render:()=>(0,o.jsxs)(l,{disabled:!0,children:[(0,o.jsx)(u,{className:`w-[200px]`,children:`Disabled`}),(0,o.jsx)(d,{children:(0,o.jsx)(f,{value:`a`,children:`Option A`})})]})};m.parameters={...m.parameters,docs:{...m.parameters?.docs,source:{originalSource:`{
+  render: () => <Select>
+      <SelectTrigger className="w-[200px]">Select a fruit</SelectTrigger>
+      <SelectContent>
+        <SelectItem value="apple">Apple</SelectItem>
+        <SelectItem value="banana">Banana</SelectItem>
+        <SelectItem value="cherry">Cherry</SelectItem>
+        <SelectItem value="grape">Grape</SelectItem>
+      </SelectContent>
+    </Select>
+}`,...m.parameters?.docs?.source}}},h.parameters={...h.parameters,docs:{...h.parameters?.docs,source:{originalSource:`{
+  name: "With Label",
+  render: () => <div className="grid w-full max-w-sm gap-1.5">
+      <Label>Timezone</Label>
+      <Select>
+        <SelectTrigger>Select timezone</SelectTrigger>
+        <SelectContent>
+          <SelectItem value="utc">UTC</SelectItem>
+          <SelectItem value="est">Eastern (EST)</SelectItem>
+          <SelectItem value="cst">Central (CST)</SelectItem>
+          <SelectItem value="pst">Pacific (PST)</SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
+}`,...h.parameters?.docs?.source}}},g.parameters={...g.parameters,docs:{...g.parameters?.docs,source:{originalSource:`{
+  render: () => <Select disabled>
+      <SelectTrigger className="w-[200px]">Disabled</SelectTrigger>
+      <SelectContent>
+        <SelectItem value="a">Option A</SelectItem>
+      </SelectContent>
+    </Select>
+}`,...g.parameters?.docs?.source}}};var _=[`Playground`,`WithLabel`,`Disabled`];export{g as Disabled,m as Playground,h as WithLabel,_ as __namedExportsOrder,p as default};

@@ -1,0 +1,94 @@
+import { Meta } from "@storybook/blocks"
+
+<Meta title="Getting Started/Theming" />
+
+# Theming
+
+Fan Tokens uses **CSS custom properties** as design tokens, making theming as simple as overriding variables.
+
+## Token Categories
+
+### Colors
+
+All colors are defined as HSL values and consumed via Tailwind utilities:
+
+```css
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0.026 264.436);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0.001 286.375);
+  --destructive: oklch(0.577 0.245 27.325);
+  --muted: oklch(0.97 0.001 286.375);
+  --accent: oklch(0.97 0.001 286.375);
+  --border: oklch(0.922 0.004 286.32);
+  --ring: oklch(0.708 0.005 286.286);
+}
+```
+
+### Component Tokens
+
+Individual components have their own tokens for fine-grained control:
+
+```css
+:root {
+  --button-height: 2.25rem;
+  --button-padding-x: 1rem;
+  --button-radius: var(--radius-md);
+  --checkbox-size: 1rem;
+  --input-height: 2.25rem;
+  --card-radius: var(--radius-lg);
+}
+```
+
+### Radii, Shadows, Typography
+
+```css
+:root {
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+```
+
+## Dark Mode
+
+Add the `.dark` class to any parent element to activate dark mode tokens:
+
+```html
+<html class="dark">
+  <!-- Dark mode active for entire page -->
+</html>
+```
+
+Or scope it to a section:
+
+```html
+<div class="dark">
+  <!-- Only this section uses dark mode -->
+</div>
+```
+
+## Custom Theme Example
+
+Override tokens in your CSS to create a custom brand theme:
+
+```css
+@layer base {
+  :root {
+    --primary: oklch(0.6 0.25 30);        /* Brand orange */
+    --primary-foreground: oklch(1 0 0);
+    --radius-md: 1rem;                     /* Rounder corners */
+    --button-height: 2.75rem;              /* Taller buttons */
+  }
+  .dark {
+    --primary: oklch(0.7 0.2 30);
+    --background: oklch(0.15 0.01 260);
+  }
+}
+```
+
+All components automatically pick up the new token values — no prop changes needed.
