@@ -1,10 +1,5 @@
-import { useState, useEffect, useMemo, lazy, Suspense } from "react"
+import { useState, useEffect, useMemo, Suspense } from "react"
 import { cn } from "fan-tokens/utils"
-
-const DashboardShowcase = lazy(() => import("./showcases/dashboard-showcase").then(m => ({ default: () => <m.DashboardShowcase /> })))
-const LandingShowcase = lazy(() => import("./showcases/landing-showcase").then(m => ({ default: () => <m.LandingShowcase /> })))
-const CryptoShowcase = lazy(() => import("./showcases/crypto-showcase").then(m => ({ default: () => <m.CryptoShowcase /> })))
-const TokenDetailShowcase = lazy(() => import("./showcases/token-detail-showcase").then(m => ({ default: () => <m.TokenDetailShowcase /> })))
 
 /* ─── Component registry ─── */
 export interface ComponentDoc {
@@ -32,7 +27,15 @@ interface DocsLayoutProps {
 }
 
 export function DocsLayout({ components }: DocsLayoutProps) {
-  const [activeSlug, setActiveSlug] = useState(() => window.location.hash.slice(1) || "introduction")
+  const knownSlugs = useMemo(
+    () => new Set(["introduction", "tokens", ...components.map((c) => c.slug)]),
+    [components]
+  )
+  const getSlugFromHash = () => {
+    const hashSlug = window.location.hash.slice(1) || "introduction"
+    return knownSlugs.has(hashSlug) ? hashSlug : "introduction"
+  }
+  const [activeSlug, setActiveSlug] = useState(getSlugFromHash)
   const [search, setSearch] = useState("")
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [dark, setDark] = useState(false)
@@ -53,12 +56,13 @@ export function DocsLayout({ components }: DocsLayoutProps) {
 
   // Sync hash
   useEffect(() => {
-    const onHash = () => setActiveSlug(window.location.hash.slice(1) || "introduction")
+    const onHash = () => setActiveSlug(getSlugFromHash())
     window.addEventListener("hashchange", onHash)
     return () => window.removeEventListener("hashchange", onHash)
-  }, [])
+  }, [knownSlugs])
 
   const navigate = (slug: string) => {
+    if (!knownSlugs.has(slug)) return
     window.location.hash = slug
     setActiveSlug(slug)
     if (isMobile) setSidebarOpen(false)
@@ -84,6 +88,9 @@ export function DocsLayout({ components }: DocsLayoutProps) {
   }, [components, search])
 
   const activeComponent = components.find((c) => c.slug === activeSlug)
+  const showcaseComponents = components.filter((c) => c.category === "Showcases")
+  const activeShowcaseComponent = showcaseComponents.find((c) => c.slug === activeSlug)
+  const isShowcasePage = Boolean(activeShowcaseComponent)
 
   return (
     <div className="flex h-screen overflow-hidden bg-background text-foreground">
@@ -188,54 +195,20 @@ export function DocsLayout({ components }: DocsLayoutProps) {
             <div className="mb-1 px-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/60">
               Showcase
             </div>
-            <button
-              onClick={() => navigate("showcase-dashboard")}
-              className={cn(
-                "flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-left text-sm transition-colors",
-                activeSlug === "showcase-dashboard"
-                  ? "bg-primary/10 text-primary font-medium"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
-              )}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-              Dashboard
-            </button>
-            <button
-              onClick={() => navigate("showcase-landing")}
-              className={cn(
-                "flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-left text-sm transition-colors",
-                activeSlug === "showcase-landing"
-                  ? "bg-primary/10 text-primary font-medium"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
-              )}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-              Landing Page
-            </button>
-            <button
-              onClick={() => navigate("showcase-crypto")}
-              className={cn(
-                "flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-left text-sm transition-colors",
-                activeSlug === "showcase-crypto"
-                  ? "bg-primary/10 text-primary font-medium"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
-              )}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>
-              Crypto Tracker
-            </button>
-            <button
-              onClick={() => navigate("showcase-token-detail")}
-              className={cn(
-                "flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-left text-sm transition-colors",
-                activeSlug === "showcase-token-detail"
-                  ? "bg-primary/10 text-primary font-medium"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
-              )}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-              Token Detail
-            </button>
+            {showcaseComponents.map((item) => (
+              <button
+                key={item.slug}
+                onClick={() => navigate(item.slug)}
+                className={cn(
+                  "flex w-full items-center rounded-md px-3 py-1.5 text-left text-sm transition-colors",
+                  activeSlug === item.slug
+                    ? "bg-primary/10 text-primary font-medium"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                )}
+              >
+                {item.name}
+              </button>
+            ))}
           </div>
         </nav>
 
@@ -257,7 +230,7 @@ export function DocsLayout({ components }: DocsLayoutProps) {
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
             </button>
             <span className="text-sm text-muted-foreground">
-              {activeComponent ? `${activeComponent.category} / ${activeComponent.name}` : activeSlug === "tokens" ? "Design Tokens" : activeSlug === "showcase-dashboard" ? "Showcase / Dashboard" : activeSlug === "showcase-landing" ? "Showcase / Landing Page" : activeSlug === "showcase-crypto" ? "Showcase / Crypto Tracker" : activeSlug === "showcase-token-detail" ? "Showcase / Token Detail" : "Introduction"}
+              {activeComponent ? `${activeComponent.category} / ${activeComponent.name}` : activeSlug === "tokens" ? "Design Tokens" : "Introduction"}
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -277,13 +250,10 @@ export function DocsLayout({ components }: DocsLayoutProps) {
 
         {/* Content */}
         <main className="flex-1 overflow-y-auto">
-          {activeSlug.startsWith("showcase-") ? (
+          {isShowcasePage ? (
             <div className="mx-auto max-w-7xl px-3 py-4 sm:px-6 sm:py-6">
               <Suspense fallback={<div className="flex items-center justify-center h-64 text-muted-foreground">Loading showcase...</div>}>
-                {activeSlug === "showcase-dashboard" && <DashboardShowcase />}
-                {activeSlug === "showcase-landing" && <LandingShowcase />}
-                {activeSlug === "showcase-crypto" && <CryptoShowcase />}
-                {activeSlug === "showcase-token-detail" && <TokenDetailShowcase />}
+                {activeShowcaseComponent?.render()}
               </Suspense>
             </div>
           ) : (

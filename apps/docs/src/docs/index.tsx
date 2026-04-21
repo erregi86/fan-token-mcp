@@ -47,6 +47,14 @@ import { FormDoc } from "./components/form-doc"
 import { InputOTPDoc } from "./components/input-otp-doc"
 import { ResizableDoc } from "./components/resizable-doc"
 
+// Showcases
+import { WhatAreFanTokensShowcase } from "./showcases/what-are-fan-tokens-showcase"
+import { HowToBuyFanTokensShowcase } from "./showcases/how-to-buy-fan-tokens-showcase"
+import { DashboardShowcase } from "./showcases/dashboard-showcase"
+import { LandingShowcase } from "./showcases/landing-showcase"
+import { CryptoShowcase } from "./showcases/crypto-showcase"
+import { TokenDetailShowcase } from "./showcases/token-detail-showcase"
+
 const components: ComponentDoc[] = [
   // Form Controls
   { slug: "button", name: "Button", category: "Form Controls", description: "Displays a button.", render: () => <ButtonDoc /> },
@@ -107,6 +115,14 @@ const components: ComponentDoc[] = [
 
   // Search
   { slug: "command", name: "Command", category: "Search", description: "Command palette.", render: () => <CommandDoc /> },
+
+  // Showcases
+  { slug: "dashboard-showcase", name: "Dashboard", category: "Showcases", description: "Admin dashboard experience showcase.", render: () => <DashboardShowcase /> },
+  { slug: "landing-showcase", name: "Landing Page", category: "Showcases", description: "Marketing landing page showcase.", render: () => <LandingShowcase /> },
+  { slug: "crypto-showcase", name: "Crypto Tracker", category: "Showcases", description: "Crypto market dashboard showcase.", render: () => <CryptoShowcase /> },
+  { slug: "token-detail-showcase", name: "Token Detail", category: "Showcases", description: "Detailed token page showcase.", render: () => <TokenDetailShowcase /> },
+  { slug: "what-are-fan-tokens", name: "What Are Fan Tokens?", category: "Showcases", description: "Educational page about Fan Tokens.", render: () => <WhatAreFanTokensShowcase /> },
+  { slug: "how-to-buy-fan-tokens", name: "How to Buy Fan Tokens", category: "Showcases", description: "Step-by-step guide to buying Fan Tokens.", render: () => <HowToBuyFanTokensShowcase /> },
 ]
 
 export default function Docs() {

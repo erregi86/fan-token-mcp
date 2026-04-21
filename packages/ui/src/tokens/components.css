@@ -6,7 +6,7 @@
 
 :root {
   /* ─── Button ─── */
-  --button-radius: var(--radius-md);
+  --button-radius: var(--radius-full);
   --button-font-size: var(--text-sm);
   --button-font-weight: var(--font-weight-medium);
   --button-line-height: var(--leading-normal);
@@ -22,7 +22,7 @@
   --button-sm-height: 2rem;                     /* 32px = 8 * spacing */
   --button-sm-padding-x: 0.75rem;              /* 12px = 3 * spacing */
   --button-sm-font-size: var(--text-xs);
-  --button-sm-radius: var(--radius-md);
+  --button-sm-radius: var(--radius-full);
 
   /* Button: lg */
   --button-lg-height: 2.5rem;                  /* 40px = 10 * spacing */
