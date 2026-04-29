@@ -38,6 +38,16 @@
         "default": "./dist/utils/index.cjs"
       }
     },
+    "./hooks": {
+      "import": {
+        "types": "./dist/hooks/index.d.ts",
+        "default": "./dist/hooks/index.js"
+      },
+      "require": {
+        "types": "./dist/hooks/index.d.cts",
+        "default": "./dist/hooks/index.cjs"
+      }
+    },
     "./accordion": {
       "import": {
         "types": "./dist/components/accordion/index.d.ts",
