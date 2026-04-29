@@ -104,7 +104,7 @@ function Sidebar({ side = "left", variant = "sidebar", collapsible = "offcanvas"
   }
 
   return (
-    <div className="group peer relative hidden md:block" data-state={state} data-collapsible={state === "collapsed" ? collapsible : ""} data-side={side}>
+    <div className="group peer relative hidden h-full md:block" data-state={state} data-collapsible={state === "collapsed" ? collapsible : ""} data-side={side}>
       {/* Spacer */}
       <div
         className={cn(
