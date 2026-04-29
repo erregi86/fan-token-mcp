@@ -104,11 +104,11 @@ function Sidebar({ side = "left", variant = "sidebar", collapsible = "offcanvas"
   }
 
   return (
-    <div className="group peer hidden md:block" data-state={state} data-collapsible={state === "collapsed" ? collapsible : ""} data-side={side}>
+    <div className="group peer relative hidden md:block" data-state={state} data-collapsible={state === "collapsed" ? collapsible : ""} data-side={side}>
       {/* Spacer */}
       <div
         className={cn(
-          "relative h-svh w-[--sidebar-width] bg-transparent transition-[width] duration-200 ease-linear",
+          "relative h-full w-[--sidebar-width] bg-transparent transition-[width] duration-200 ease-linear",
           state === "collapsed" && (collapsible === "offcanvas" ? "w-0" : "w-[--sidebar-width-collapsed]"),
           side === "right" && "rotate-180"
         )}
