@@ -117,7 +117,7 @@ function Sidebar({ side = "left", variant = "sidebar", collapsible = "offcanvas"
       <div
         data-slot="sidebar"
         className={cn(
-          "fixed inset-y-0 z-10 hidden h-svh w-[--sidebar-width] flex-col bg-sidebar text-sidebar-foreground transition-[left,right,width] duration-200 ease-linear md:flex",
+          "absolute inset-y-0 z-10 hidden h-full w-[--sidebar-width] flex-col bg-sidebar text-sidebar-foreground transition-[left,right,width] duration-200 ease-linear md:flex",
           side === "left" ? "left-0 border-r border-sidebar-border" : "right-0 border-l border-sidebar-border",
           state === "collapsed" && collapsible === "offcanvas" && (side === "left" ? "left-[calc(var(--sidebar-width)*-1)]" : "right-[calc(var(--sidebar-width)*-1)]"),
           state === "collapsed" && collapsible === "icon" && "w-[--sidebar-width-collapsed]",
