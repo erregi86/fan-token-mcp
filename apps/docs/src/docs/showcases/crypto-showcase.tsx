@@ -241,9 +241,11 @@ function Sparkline({ data, positive }: { data: number[]; positive: boolean }) {
 
 /* ─── CoinAvatar Component ─── */
 function CoinAvatar({ coin, size = "size-7" }: { coin: Coin; size?: string }) {
+  const { logo } = useCoinGeckoLogo(coin.coingeckoId, "small")
+
   return (
     <Avatar className={size}>
-      <AvatarImage src={coin.logoUrl} alt={coin.name} />
+      {logo && <AvatarImage src={logo} alt={coin.name} />}
       <AvatarFallback className={cn("text-[10px] font-bold text-white", coin.color)}>
         {coin.symbol.slice(0, 2)}
       </AvatarFallback>

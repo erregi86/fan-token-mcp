@@ -9,7 +9,7 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "f
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "fan-tokens/tabs"
 import { Select, SelectTrigger, SelectContent, SelectItem } from "fan-tokens/select"
 import { Separator } from "fan-tokens/separator"
-import { Avatar, AvatarFallback, AvatarImage } from "fan-tokens"
+import { Avatar, AvatarFallback, AvatarImage, useCoinGeckoLogo } from "fan-tokens"
 import { Progress } from "fan-tokens/progress"
 import { Tooltip } from "fan-tokens/tooltip"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "fan-tokens/accordion"
@@ -155,9 +155,11 @@ function PriceChart({ data, timeframe }: { data: number[]; timeframe: string }) 
 
 /* ─── TokenAvatar Component ─── */
 function TokenAvatar({ token, size = "size-10" }: { token: any; size?: string }) {
+  const { logo } = useCoinGeckoLogo(token.coingeckoId, "small")
+
   return (
     <Avatar className={size}>
-      <AvatarImage src={token.logoUrl} alt={token.name} />
+      {logo && <AvatarImage src={logo} alt={token.name} />}
       <AvatarFallback className="bg-blue-600 text-white font-bold text-sm">
         {token.symbol.slice(0, 3)}
       </AvatarFallback>
