@@ -9,7 +9,7 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "f
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "fan-tokens/tabs"
 import { Select, SelectTrigger, SelectContent, SelectItem } from "fan-tokens/select"
 import { Separator } from "fan-tokens/separator"
-import { Avatar, AvatarFallback } from "fan-tokens/avatar"
+import { Avatar, AvatarFallback, AvatarImage, useCoinGeckoLogo } from "fan-tokens"
 import { Progress } from "fan-tokens/progress"
 import { Tooltip } from "fan-tokens/tooltip"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "fan-tokens/accordion"
@@ -26,6 +26,7 @@ import { Alert, AlertTitle, AlertDescription } from "fan-tokens/alert"
 const TOKEN = {
   name: "Paris Saint-Germain Fan Token",
   symbol: "PSG",
+  coingeckoId: "socios",
   rank: 487,
   price: 3.42,
   change1h: -0.28,
@@ -151,6 +152,20 @@ function PriceChart({ data, timeframe }: { data: number[]; timeframe: string }) 
   )
 }
 
+/* ─── TokenAvatar Component ─── */
+function TokenAvatar({ token, size = "size-10" }: { token: any; size?: string }) {
+  const { logo } = useCoinGeckoLogo(token.coingeckoId || "", "small")
+
+  return (
+    <Avatar className={size}>
+      {logo && <AvatarImage src={logo} alt={token.name} />}
+      <AvatarFallback className="bg-blue-600 text-white font-bold text-sm">
+        {token.symbol.slice(0, 3)}
+      </AvatarFallback>
+    </Avatar>
+  )
+}
+
 /* ─── Main Component ─── */
 export function TokenDetailShowcase() {
   const [watchlisted, setWatchlisted] = useState(false)
@@ -183,9 +198,7 @@ export function TokenDetailShowcase() {
         <div className="space-y-3">
           {/* Name Row */}
           <div className="flex items-center gap-3 flex-wrap">
-            <Avatar className="size-10">
-              <AvatarFallback className="bg-blue-600 text-white font-bold text-sm">PSG</AvatarFallback>
-            </Avatar>
+            <TokenAvatar token={TOKEN} />
             <div>
               <div className="flex items-center gap-2 flex-wrap">
                 <h1 className="text-2xl font-bold">{TOKEN.name}</h1>
