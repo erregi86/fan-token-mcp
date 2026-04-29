@@ -129,6 +129,11 @@ export {
   NavigationMenuViewport, NavigationMenuIndicator, navigationMenuTriggerStyle,
 } from "./components/navigation-menu"
 
+export {
+  AppHeader, AppHeaderLogo, AppHeaderNav, AppHeaderNavItem,
+  AppHeaderSearch, AppHeaderActions, AppHeaderActionButton,
+} from "./components/app-header"
+
 // ─── Search ───
 export {
   Command, CommandInput, CommandList, CommandEmpty, CommandGroup,

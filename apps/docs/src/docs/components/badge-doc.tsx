@@ -83,11 +83,11 @@ export function BadgeDoc() {
 
       <TokensReference
         tokens={[
-          { name: "--badge-radius", value: "9999px", description: "Border radius for pill shape." },
-          { name: "--badge-padding-x", value: "10px", description: "Horizontal padding inside the badge." },
-          { name: "--badge-padding-y", value: "2px", description: "Vertical padding inside the badge." },
-          { name: "--badge-font-size", value: "12px", description: "Font size of badge text." },
-          { name: "--badge-font-weight", value: "600", description: "Font weight for badge text." },
+          { name: "--badge-radius", value: "var(--radius-md)", description: "Border radius for pill shape." },
+          { name: "--badge-padding-x", value: "0.625rem", description: "Horizontal padding inside the badge." },
+          { name: "--badge-padding-y", value: "0.125rem", description: "Vertical padding inside the badge." },
+          { name: "--badge-font-size", value: "var(--text-xs)", description: "Font size of badge text." },
+          { name: "--badge-font-weight", value: "var(--font-weight-semibold)", description: "Font weight for badge text." },
         ]}
       />
 

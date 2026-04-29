@@ -1,0 +1,45 @@
+{
+  "components": {
+    "layout": [
+      { "name": "Card", "from": "fan-tokens", "usage": "container with padding and border", "props": ["className", "children"] },
+      { "name": "Separator", "from": "fan-tokens", "usage": "visual divider", "props": ["className", "orientation"] },
+      { "name": "ScrollArea", "from": "fan-tokens", "usage": "scrollable container", "props": ["className", "children"] }
+    ],
+    "controls": [
+      { "name": "Button", "from": "fan-tokens", "usage": "clickable action", "variants": ["default", "outline", "ghost", "destructive"], "props": ["variant", "size", "className"] },
+      { "name": "Input", "from": "fan-tokens", "usage": "text input field", "props": ["placeholder", "type", "className"] },
+      { "name": "Badge", "from": "fan-tokens", "usage": "label/tag/status", "variants": ["default", "secondary", "outline", "destructive"], "props": ["variant", "className"] }
+    ],
+    "display": [
+      { "name": "Table", "from": "fan-tokens", "usage": "data table", "subcomponents": ["TableHeader", "TableBody", "TableRow", "TableHead", "TableCell"] },
+      { "name": "Avatar", "from": "fan-tokens", "usage": "user profile picture", "props": ["className"] },
+      { "name": "Progress", "from": "fan-tokens", "usage": "progress indicator", "props": ["value", "className"] },
+      { "name": "Skeleton", "from": "fan-tokens", "usage": "loading placeholder", "props": ["className"] }
+    ],
+    "feedback": [
+      { "name": "Alert", "from": "fan-tokens", "usage": "alert message", "subcomponents": ["AlertTitle", "AlertDescription"] },
+      { "name": "Toast", "from": "fan-tokens", "usage": "notification toast", "props": ["title", "description"] }
+    ],
+    "navigation": [
+      { "name": "Tabs", "from": "fan-tokens", "usage": "tabbed content", "subcomponents": ["TabsList", "TabsTrigger", "TabsContent"] },
+      { "name": "Breadcrumb", "from": "fan-tokens", "usage": "page hierarchy", "subcomponents": ["BreadcrumbList", "BreadcrumbItem", "BreadcrumbLink", "BreadcrumbPage"] },
+      { "name": "Pagination", "from": "fan-tokens", "usage": "page navigation", "subcomponents": ["PaginationContent", "PaginationItem", "PaginationLink", "PaginationPrevious", "PaginationNext"] }
+    ],
+    "header": [
+      { "name": "AppHeader", "from": "fan-tokens", "usage": "top navigation", "subcomponents": ["AppHeaderLogo", "AppHeaderNav", "AppHeaderNavItem", "AppHeaderActions", "AppHeaderActionButton"] }
+    ]
+  },
+  "tokens": {
+    "colors": ["primary", "secondary", "accent", "destructive", "success", "warning", "info", "muted", "background", "foreground"],
+    "spacing": ["xs", "sm", "md", "lg", "xl"],
+    "text": ["xs", "sm", "base", "lg", "xl", "2xl", "3xl", "4xl"]
+  },
+  "patterns": {
+    "header": "AppHeader with logo, nav items, and actions",
+    "sidebar": "Vertical navigation with grouped items",
+    "table": "Data table with pagination and filters",
+    "card_grid": "Cards in 2-3 column grid with padding",
+    "form": "Input fields with labels and validation",
+    "stats": "KPI cards showing metrics"
+  }
+}

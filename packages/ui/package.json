@@ -48,6 +48,16 @@
         "default": "./dist/hooks/index.cjs"
       }
     },
+    "./app-header": {
+      "import": {
+        "types": "./dist/components/app-header/index.d.ts",
+        "default": "./dist/components/app-header/index.js"
+      },
+      "require": {
+        "types": "./dist/components/app-header/index.d.cts",
+        "default": "./dist/components/app-header/index.cjs"
+      }
+    },
     "./accordion": {
       "import": {
         "types": "./dist/components/accordion/index.d.ts",

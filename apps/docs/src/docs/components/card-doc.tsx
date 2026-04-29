@@ -105,8 +105,8 @@ export function CardDoc() {
           { name: "--card-border-color", value: "var(--border)", description: "Border color of the card." },
           { name: "--card-padding", value: "1.5rem", description: "Internal padding of card sections." },
           { name: "--card-header-gap", value: "0.375rem", description: "Gap between title and description in CardHeader." },
-          { name: "--card-title-font-size", value: "1.25rem", description: "Font size of CardTitle." },
-          { name: "--card-title-font-weight", value: "600", description: "Font weight of CardTitle." },
+          { name: "--card-title-font-size", value: "var(--text-lg)", description: "Font size of CardTitle." },
+          { name: "--card-title-font-weight", value: "var(--font-weight-semibold)", description: "Font weight of CardTitle." },
           { name: "--card-description-font-size", value: "0.875rem", description: "Font size of CardDescription." },
         ]}
       />

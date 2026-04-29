@@ -57,7 +57,7 @@ function RadioGroupItem({ value, className, ...props }: RadioGroupItemProps) {
     >
       {checked && (
         <span className="flex items-center justify-center">
-          /* Token: --radio-dot-size, --radio-bg */
+          {/* Token: --radio-dot-size, --radio-bg */}
           <span className="size-[var(--radio-dot-size)] rounded-full bg-[var(--radio-bg)]" />
         </span>
       )}

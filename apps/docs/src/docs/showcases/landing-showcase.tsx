@@ -18,6 +18,7 @@ import { ToggleGroup, ToggleGroupItem } from "fan-tokens/toggle-group"
 import { Progress } from "fan-tokens/progress"
 import { Tooltip } from "fan-tokens/tooltip"
 import { toast } from "fan-tokens/toast"
+import { AppHeader, AppHeaderLogo, AppHeaderNav, AppHeaderNavItem, AppHeaderActions, AppHeaderActionButton } from "fan-tokens"
 
 /* ─── Data ─── */
 const FEATURES = [
@@ -100,34 +101,24 @@ export function LandingShowcase() {
   return (
     <div className="rounded-xl border border-border shadow-lg overflow-hidden bg-background">
       {/* ─── Navbar ─── */}
-      <nav className="flex items-center justify-between border-b border-border px-4 sm:px-8 py-3">
-        <div className="flex items-center gap-4 sm:gap-8">
+      <AppHeader>
+        <AppHeaderLogo>
           <div className="flex items-center gap-2">
             <div className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground text-sm font-bold">A</div>
             <span className="text-lg font-bold">Acme</span>
           </div>
-          <NavigationMenu className="hidden sm:flex">
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Features</NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Pricing</NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Docs</NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Blog</NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
-        <div className="flex items-center gap-2 sm:gap-3">
-          <Button variant="ghost" size="sm" className="hidden sm:inline-flex">Sign in</Button>
-          <Button size="sm">Get Started</Button>
-        </div>
-      </nav>
+        </AppHeaderLogo>
+        <AppHeaderNav>
+          <AppHeaderNavItem>Features</AppHeaderNavItem>
+          <AppHeaderNavItem>Pricing</AppHeaderNavItem>
+          <AppHeaderNavItem>Docs</AppHeaderNavItem>
+          <AppHeaderNavItem>Blog</AppHeaderNavItem>
+        </AppHeaderNav>
+        <AppHeaderActions>
+          <AppHeaderActionButton variant="ghost" size="sm" className="hidden sm:inline-flex">Sign in</AppHeaderActionButton>
+          <AppHeaderActionButton size="sm">Get Started</AppHeaderActionButton>
+        </AppHeaderActions>
+      </AppHeader>
 
       {/* ─── Hero ─── */}
       <section className="px-4 sm:px-8 py-12 sm:py-20 text-center">

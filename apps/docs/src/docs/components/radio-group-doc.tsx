@@ -22,18 +22,20 @@ export function RadioGroupDoc() {
     >
       <UsageGuidelines
         guidelines={[
-          { icon: "\u2705", text: "Use for single-select scenarios with 2 to 5 options that should all be visible at once." },
-          { icon: "\u2705", text: "Ideal when the user needs to compare options before making a selection." },
-          { icon: "\ud83d\udca1", text: "If you have more than 5 options, consider using a Select dropdown to save space." },
-          { icon: "\ud83d\udca1", text: "Always provide a default selection when one option is clearly the most common or recommended choice." },
-          { icon: "\u26a0\ufe0f", text: "Do not use for multi-select scenarios -- use Checkbox groups instead." },
+          { icon: "✅", text: "Use for single-select scenarios with 2 to 5 options that should all be visible at once." },
+          { icon: "✅", text: "Ideal when the user needs to compare options before making a selection." },
+          { icon: "💡", text: "If you have more than 5 options, consider using a Select dropdown to save space." },
+          { icon: "💡", text: "Always provide a default selection when one option is clearly the most common or recommended choice." },
+          { icon: "⚠️", text: "Do not use for multi-select scenarios -- use Checkbox groups instead." },
         ]}
       />
 
-      <BreakpointInfo
-        mobile="Display options in a vertical list with larger spacing between items for comfortable touch interaction."
-        desktop="Can use a horizontal layout for 2-3 options. For 4+ options, prefer a vertical list or grid."
-      />
+      <DemoSection title="Responsive Behavior">
+        <BreakpointInfo
+          mobile="Display options in a vertical list with larger spacing between items for comfortable touch interaction."
+          desktop="Can use a horizontal layout for 2-3 options. For 4+ options, prefer a vertical list or grid."
+        />
+      </DemoSection>
 
       <DemoSection title="Default">
         <RadioGroup value={defaultValue} onValueChange={setDefaultValue}>
@@ -103,18 +105,18 @@ export function RadioGroupDoc() {
       </DemoSection>
 
       <DemoSection title="Disabled">
-        <RadioGroup value="option-1" disabled>
+        <RadioGroup value="option-1">
           <div className="flex items-center gap-2">
-            <RadioGroupItem value="option-1" />
-            <Label className="text-muted-foreground">Option 1 (selected)</Label>
+            <RadioGroupItem value="option-1" disabled />
+            <Label className="text-muted-foreground">Option 1 (disabled)</Label>
           </div>
           <div className="flex items-center gap-2">
-            <RadioGroupItem value="option-2" />
-            <Label className="text-muted-foreground">Option 2</Label>
+            <RadioGroupItem value="option-2" disabled />
+            <Label className="text-muted-foreground">Option 2 (disabled)</Label>
           </div>
           <div className="flex items-center gap-2">
-            <RadioGroupItem value="option-3" />
-            <Label className="text-muted-foreground">Option 3</Label>
+            <RadioGroupItem value="option-3" disabled />
+            <Label className="text-muted-foreground">Option 3 (disabled)</Label>
           </div>
         </RadioGroup>
       </DemoSection>
@@ -138,8 +140,8 @@ export function RadioGroupDoc() {
         tokens={[
           { name: "--radio-size", value: "1rem", description: "Width and height of the radio button circle." },
           { name: "--radio-dot-size", value: "0.5rem", description: "Diameter of the inner dot when selected." },
-          { name: "--radio-border-color", value: "var(--input)", description: "Border color of the radio button in its default state." },
-          { name: "--radio-bg", value: "var(--background)", description: "Background color of the radio button when unselected." },
+          { name: "--radio-border-color", value: "var(--primary)", description: "Border color of the radio button in its default state." },
+          { name: "--radio-bg", value: "var(--primary)", description: "Background color of the radio button when checked." },
           { name: "--focus-ring-width", value: "2px", description: "Width of the focus ring shown on keyboard navigation." },
         ]}
       />
@@ -171,8 +173,9 @@ export function RadioGroupDoc() {
 </RadioGroup>
 
 // Disabled
-<RadioGroup value="option-1" disabled>
-  <RadioGroupItem value="option-1" />
+<RadioGroup value="option-1">
+  <RadioGroupItem value="option-1" disabled />
+  <RadioGroupItem value="option-2" disabled />
 </RadioGroup>`}</CodeBlock>
     </ComponentPage>
   )

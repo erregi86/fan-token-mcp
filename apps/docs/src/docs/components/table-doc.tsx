@@ -16,6 +16,7 @@ import {
   TableHead,
   TableCell,
   TableCaption,
+  Checkbox,
 } from "fan-tokens"
 
 export function TableDoc() {
@@ -77,7 +78,7 @@ export function TableDoc() {
           <TableHeader>
             <TableRow>
               <TableHead className="w-[40px]">
-                <input type="checkbox" className="rounded border-border" />
+                <Checkbox />
               </TableHead>
               <TableHead>Name</TableHead>
               <TableHead>Email</TableHead>
@@ -95,7 +96,7 @@ export function TableDoc() {
             </TableRow>
             <TableRow>
               <TableCell>
-                <input type="checkbox" className="rounded border-border" />
+                <Checkbox />
               </TableCell>
               <TableCell className="font-medium">Bob Smith</TableCell>
               <TableCell>bob@example.com</TableCell>
@@ -103,7 +104,7 @@ export function TableDoc() {
             </TableRow>
             <TableRow>
               <TableCell>
-                <input type="checkbox" className="rounded border-border" />
+                <Checkbox />
               </TableCell>
               <TableCell className="font-medium">Carol White</TableCell>
               <TableCell>carol@example.com</TableCell>
@@ -165,12 +166,12 @@ export function TableDoc() {
 
       <TokensReference
         tokens={[
-          { name: "--table-font-size", value: "14px", description: "Base font size for table content." },
-          { name: "--table-head-height", value: "40px", description: "Height of the table header row." },
-          { name: "--table-head-font-weight", value: "500", description: "Font weight for header cells." },
+          { name: "--table-font-size", value: "var(--text-sm)", description: "Base font size for table content." },
+          { name: "--table-head-height", value: "2.5rem", description: "Height of the table header row." },
+          { name: "--table-head-font-weight", value: "var(--font-weight-medium)", description: "Font weight for header cells." },
           { name: "--table-head-fg", value: "var(--muted-foreground)", description: "Text color for header cells." },
-          { name: "--table-cell-padding-x", value: "16px", description: "Horizontal padding inside cells." },
-          { name: "--table-cell-padding-y", value: "12px", description: "Vertical padding inside cells." },
+          { name: "--table-cell-padding-x", value: "0.5rem", description: "Horizontal padding inside cells." },
+          { name: "--table-cell-padding-y", value: "0.5rem", description: "Vertical padding inside cells." },
           { name: "--table-row-border-color", value: "var(--border)", description: "Color of row divider borders." },
           { name: "--table-row-hover-bg", value: "var(--muted)/50", description: "Background on row hover." },
           { name: "--table-row-selected-bg", value: "var(--muted)/50", description: "Background for selected rows." },

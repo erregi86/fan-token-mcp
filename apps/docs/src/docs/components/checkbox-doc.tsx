@@ -25,11 +25,11 @@ export function CheckboxDoc() {
     >
       <UsageGuidelines
         guidelines={[
-          { icon: "\u2705", text: "Use for boolean choices where the user can select zero, one, or multiple options independently." },
-          { icon: "\u2705", text: "Ideal for multi-select scenarios such as selecting toppings, features, or filter criteria." },
-          { icon: "\u2705", text: "Use for terms acceptance and consent flows where the user must explicitly opt in." },
-          { icon: "\ud83d\udca1", text: "Always pair with a visible label for accessibility. The label should clearly describe what the checkbox controls." },
-          { icon: "\u26a0\ufe0f", text: "If only one option can be selected from a group, use RadioGroup instead." },
+          { icon: "✅", text: "Use for boolean choices where the user can select zero, one, or multiple options independently." },
+          { icon: "✅", text: "Ideal for multi-select scenarios such as selecting toppings, features, or filter criteria." },
+          { icon: "✅", text: "Use for terms acceptance and consent flows where the user must explicitly opt in." },
+          { icon: "💡", text: "Always pair with a visible label for accessibility. The label should clearly describe what the checkbox controls." },
+          { icon: "⚠️", text: "If only one option can be selected from a group, use RadioGroup instead." },
         ]}
       />
 

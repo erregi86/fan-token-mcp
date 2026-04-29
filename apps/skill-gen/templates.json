@@ -1,0 +1,58 @@
+{
+  "templates": {
+    "dashboard": {
+      "minimal": ["header", "stats_grid", "recent_table"],
+      "full": ["header", "sidebar", "stats_grid", "charts", "recent_table", "activity_feed"]
+    },
+    "landing": {
+      "minimal": ["hero", "features_3col", "cta"],
+      "corporate": ["hero", "features_grid", "testimonials", "pricing", "faq", "footer_cta"]
+    },
+    "backoffice": {
+      "minimal": ["header", "sidebar", "table", "pagination"],
+      "full": ["header", "sidebar", "filters", "table", "bulk_actions", "pagination"]
+    }
+  },
+  "layouts": {
+    "hero": {
+      "desc": "Large heading + subheading + CTA buttons",
+      "components": ["h1.text-4xl", "p.text-lg.text-muted-foreground", "Button + Button"]
+    },
+    "stats_grid": {
+      "desc": "4 stat cards in grid",
+      "components": "Card[] x4 with metric value + label"
+    },
+    "features_3col": {
+      "desc": "3 feature cards",
+      "components": "Card[] x3 with icon + title + description"
+    },
+    "features_grid": {
+      "desc": "6 feature cards in 2-3 rows",
+      "components": "Card[] x6"
+    },
+    "recent_table": {
+      "desc": "Table with 5-10 rows",
+      "components": "Table with Header, Body, Rows"
+    },
+    "sidebar": {
+      "desc": "Left navigation menu",
+      "components": "Nav with links and icons"
+    },
+    "testimonials": {
+      "desc": "Carousel or grid of testimonial cards",
+      "components": "Card[] with Avatar + quote"
+    },
+    "pricing": {
+      "desc": "3 pricing tiers",
+      "components": "Card[] x3 with features checklist"
+    },
+    "faq": {
+      "desc": "FAQ accordion",
+      "components": "Accordion with items"
+    },
+    "footer_cta": {
+      "desc": "Final call-to-action section",
+      "components": "Heading + Button"
+    }
+  }
+}

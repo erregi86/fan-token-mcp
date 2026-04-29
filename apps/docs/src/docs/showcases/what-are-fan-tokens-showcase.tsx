@@ -4,6 +4,7 @@ import { Badge } from "fan-tokens/badge"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "fan-tokens/card"
 import { Separator } from "fan-tokens/separator"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "fan-tokens/accordion"
+import { AppHeader, AppHeaderLogo, AppHeaderNav, AppHeaderNavItem, AppHeaderActions, AppHeaderActionButton } from "fan-tokens"
 
 const TOKENS = [
   { symbol: "PSG", name: "Paris Saint-Germain", type: "Football", gradient: "from-blue-900 via-blue-700 to-slate-950", color: "#004170" },
@@ -66,18 +67,22 @@ export function WhatAreFanTokensShowcase() {
   return (
     <div className="rounded-lg border border-border shadow-lg overflow-hidden bg-background">
       {/* ─── NAVBAR ─── */}
-      <nav className="flex items-center justify-between border-b border-border px-6 py-4">
-        <div className="flex items-center gap-2">
-          <div className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-sm">F</div>
-          <span className="font-bold text-lg">Fan<span className="text-primary">Tokens</span></span>
-        </div>
-        <div className="hidden sm:flex items-center gap-6">
-          <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition">Voting</a>
-          <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition">Newsroom</a>
-          <a href="#" className="text-sm text-foreground font-medium">What Are Fan Tokens</a>
-        </div>
-        <Button size="sm" className="hidden sm:inline-flex">Get Alpha Alerts</Button>
-      </nav>
+      <AppHeader>
+        <AppHeaderLogo>
+          <div className="flex items-center gap-2">
+            <div className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-sm">F</div>
+            <span className="font-bold text-lg">Fan<span className="text-primary">Tokens</span></span>
+          </div>
+        </AppHeaderLogo>
+        <AppHeaderNav>
+          <AppHeaderNavItem>Voting</AppHeaderNavItem>
+          <AppHeaderNavItem>Newsroom</AppHeaderNavItem>
+          <AppHeaderNavItem active>What Are Fan Tokens</AppHeaderNavItem>
+        </AppHeaderNav>
+        <AppHeaderActions>
+          <AppHeaderActionButton size="sm">Get Alpha Alerts</AppHeaderActionButton>
+        </AppHeaderActions>
+      </AppHeader>
 
       {/* ─── HERO SECTION ─── */}
       <section className="px-6 sm:px-12 py-16 sm:py-24 border-b border-border">

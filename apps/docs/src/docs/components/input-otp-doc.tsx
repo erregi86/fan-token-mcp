@@ -21,11 +21,11 @@ export function InputOTPDoc() {
     >
       <UsageGuidelines
         guidelines={[
-          { icon: "\u2705", text: "Use for one-time password verification codes sent via SMS or email." },
-          { icon: "\u2705", text: "Use for PIN inputs where a fixed number of digits is expected." },
-          { icon: "\u2705", text: "Use for multi-factor authentication flows requiring short numeric codes." },
-          { icon: "\ud83d\udca1", text: "Always indicate the expected code length to the user before the input." },
-          { icon: "\u26a0\ufe0f", text: "Not suitable for free-form text input \u2014 use a standard Input component instead." },
+          { icon: "✅", text: "Use for one-time password verification codes sent via SMS or email." },
+          { icon: "✅", text: "Use for PIN inputs where a fixed number of digits is expected." },
+          { icon: "✅", text: "Use for multi-factor authentication flows requiring short numeric codes." },
+          { icon: "💡", text: "Always indicate the expected code length to the user before the input." },
+          { icon: "⚠️", text: "Not suitable for free-form text input — use a standard Input component instead." },
         ]}
       />
 
@@ -45,7 +45,7 @@ export function InputOTPDoc() {
             </InputOTPGroup>
           </InputOTP>
           <p className="text-sm text-muted-foreground">
-            Value: <span className="font-mono">{fourDigit || "\u2014"}</span>
+            Value: <span className="font-mono">{fourDigit || "—"}</span>
           </p>
         </div>
       </DemoSection>
@@ -66,7 +66,7 @@ export function InputOTPDoc() {
             </InputOTPGroup>
           </InputOTP>
           <p className="text-sm text-muted-foreground">
-            Value: <span className="font-mono">{sixDigit || "\u2014"}</span>
+            Value: <span className="font-mono">{sixDigit || "—"}</span>
           </p>
         </div>
       </DemoSection>
@@ -78,8 +78,8 @@ export function InputOTPDoc() {
           "Auto-submit the form when all digits are filled.",
         ]}
         donts={[
-          "Use for regular text input \u2014 this component is strictly for fixed-length numeric codes.",
-          "Make cells too small on mobile \u2014 ensure adequate touch target size (at least 44x44px).",
+          "Use for regular text input — this component is strictly for fixed-length numeric codes.",
+          "Make cells too small on mobile — ensure adequate touch target size (at least 44x44px).",
         ]}
       />
 

@@ -30,10 +30,12 @@ export function SidebarDoc() {
         ]}
       />
 
-      <BreakpointInfo
-        mobile="Sidebar collapses to a drawer/hamburger menu. Use SidebarTrigger to toggle visibility."
-        desktop="Persistent sidebar at 240-280px width. Can collapse to icon-only mode (collapsible='icon') for more content space."
-      />
+      <DemoSection title="Responsive Behavior">
+        <BreakpointInfo
+          mobile="Sidebar collapses to a drawer/hamburger menu. Use SidebarTrigger to toggle visibility."
+          desktop="Persistent sidebar at 240-280px width. Can collapse to icon-only mode (collapsible='icon') for more content space."
+        />
+      </DemoSection>
 
       <DemoSection title="Basic Sidebar with Groups">
         <div className="h-[400px] overflow-hidden rounded-lg border border-border">

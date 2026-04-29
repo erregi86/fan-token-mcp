@@ -22,11 +22,11 @@ export function SwitchDoc() {
     >
       <UsageGuidelines
         guidelines={[
-          { icon: "\u2705", text: "Use for instant toggles where the change takes effect immediately without a submit action." },
-          { icon: "\u2705", text: "Ideal for settings and preferences such as enabling notifications, dark mode, or feature flags." },
-          { icon: "\u2705", text: "Use when the toggle represents a clear on/off or enabled/disabled binary state." },
-          { icon: "\ud83d\udca1", text: "Label should describe the setting, not the action. For example, 'Airplane Mode' not 'Turn on Airplane Mode'." },
-          { icon: "\u26a0\ufe0f", text: "Avoid using inside forms that require a submit button -- use Checkbox for those scenarios." },
+          { icon: "✅", text: "Use for instant toggles where the change takes effect immediately without a submit action." },
+          { icon: "✅", text: "Ideal for settings and preferences such as enabling notifications, dark mode, or feature flags." },
+          { icon: "✅", text: "Use when the toggle represents a clear on/off or enabled/disabled binary state." },
+          { icon: "💡", text: "Label should describe the setting, not the action. For example, 'Airplane Mode' not 'Turn on Airplane Mode'." },
+          { icon: "⚠️", text: "Avoid using inside forms that require a submit button -- use Checkbox for those scenarios." },
         ]}
       />
 

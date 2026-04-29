@@ -53,10 +53,10 @@ export function FormDoc() {
     >
       <UsageGuidelines
         guidelines={[
-          { icon: "\u2705", text: "Use for structured data collection that requires validation and error handling." },
-          { icon: "\u2705", text: "Wrap related inputs in a Form to manage submission, validation state, and accessibility." },
-          { icon: "\ud83d\udca1", text: "Pair with FormField, FormLabel, FormControl, FormDescription, and FormMessage for a complete accessible form experience." },
-          { icon: "\u26a0\ufe0f", text: "Always provide clear error messages near the relevant field, not just at the top of the form." },
+          { icon: "✅", text: "Use for structured data collection that requires validation and error handling." },
+          { icon: "✅", text: "Wrap related inputs in a Form to manage submission, validation state, and accessibility." },
+          { icon: "💡", text: "Pair with FormField, FormLabel, FormControl, FormDescription, and FormMessage for a complete accessible form experience." },
+          { icon: "⚠️", text: "Always provide clear error messages near the relevant field, not just at the top of the form." },
         ]}
       />
 
@@ -131,19 +131,19 @@ export function FormDoc() {
           "Disable the submit button while the form is in an invalid or submitting state.",
         ]}
         donts={[
-          "Validate on every keystroke \u2014 this is too aggressive and distracting for users.",
-          "Clear the entire form on error \u2014 preserve user input so they can correct mistakes.",
-          "Hide all errors at the top of the form only \u2014 always show errors inline near the relevant field.",
+          "Validate on every keystroke  —  this is too aggressive and distracting for users.",
+          "Clear the entire form on error  —  preserve user input so they can correct mistakes.",
+          "Hide all errors at the top of the form only  —  always show errors inline near the relevant field.",
         ]}
       />
 
       <TokensReference
         tokens={[
-          { name: "--destructive", value: "hsl(var(--destructive))", description: "Color used for error messages and invalid field borders." },
-          { name: "--muted-foreground", value: "hsl(var(--muted-foreground))", description: "Color for form descriptions and helper text." },
-          { name: "--ring", value: "hsl(var(--ring))", description: "Focus ring color on form controls." },
-          { name: "--input", value: "hsl(var(--input))", description: "Default border color for input fields." },
-          { name: "--primary", value: "hsl(var(--primary))", description: "Color for the submit button and active labels." },
+          { name: "--destructive", value: "var(--destructive)", description: "Color used for error messages and invalid field borders." },
+          { name: "--muted-foreground", value: "var(--muted-foreground)", description: "Color for form descriptions and helper text." },
+          { name: "--ring", value: "var(--ring)", description: "Focus ring color on form controls." },
+          { name: "--input", value: "var(--input)", description: "Default border color for input fields." },
+          { name: "--primary", value: "var(--primary)", description: "Color for the submit button and active labels." },
         ]}
       />
 
