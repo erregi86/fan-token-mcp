@@ -9,7 +9,8 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "f
 import { Tabs, TabsList, TabsTrigger } from "fan-tokens/tabs"
 import { Select, SelectTrigger, SelectContent, SelectItem } from "fan-tokens/select"
 import { Separator } from "fan-tokens/separator"
-import { Avatar, AvatarFallback } from "fan-tokens/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "fan-tokens/avatar"
+import { useCoinGeckoLogo } from "fan-tokens/hooks"
 import { Progress } from "fan-tokens/progress"
 import { Tooltip } from "fan-tokens/tooltip"
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext } from "fan-tokens/pagination"
@@ -25,6 +26,7 @@ interface Coin {
   id: number
   name: string
   symbol: string
+  coingeckoId: string
   color: string
   price: number
   change1h: number
@@ -42,140 +44,140 @@ interface Coin {
 /* ─── Mock Data ─── */
 const COINS: Coin[] = [
   {
-    id: 1, name: "Bitcoin", symbol: "BTC", color: "bg-orange-500",
+    id: 1, name: "Bitcoin", symbol: "BTC", coingeckoId: "bitcoin", color: "bg-orange-500",
     price: 87432.15, change1h: 0.12, change24h: 2.34, change7d: -1.56,
     marketCap: 1723000000000, volume24h: 42300000000, circulatingSupply: 19700000, maxSupply: 21000000,
     network: "Bitcoin", categories: ["Layer 1", "Store of Value"],
     sparkline: [84200, 84800, 85100, 84600, 85900, 86400, 87100, 86800, 87200, 87432],
   },
   {
-    id: 2, name: "Ethereum", symbol: "ETH", color: "bg-indigo-500",
+    id: 2, name: "Ethereum", symbol: "ETH", coingeckoId: "ethereum", color: "bg-indigo-500",
     price: 3842.67, change1h: -0.08, change24h: 1.87, change7d: 3.42,
     marketCap: 462000000000, volume24h: 18900000000, circulatingSupply: 120200000, maxSupply: null,
     network: "Ethereum", categories: ["Layer 1", "Smart Contracts", "DeFi"],
     sparkline: [3720, 3680, 3740, 3790, 3810, 3780, 3830, 3800, 3820, 3842],
   },
   {
-    id: 3, name: "BNB", symbol: "BNB", color: "bg-yellow-500",
+    id: 3, name: "BNB", symbol: "BNB", coingeckoId: "binancecoin", color: "bg-yellow-500",
     price: 612.34, change1h: 0.34, change24h: -0.52, change7d: 1.23,
     marketCap: 91200000000, volume24h: 1890000000, circulatingSupply: 149000000, maxSupply: 200000000,
     network: "BSC", categories: ["Layer 1", "Exchange"],
     sparkline: [605, 608, 610, 607, 611, 609, 613, 610, 612, 612],
   },
   {
-    id: 4, name: "Solana", symbol: "SOL", color: "bg-purple-500",
+    id: 4, name: "Solana", symbol: "SOL", coingeckoId: "solana", color: "bg-purple-500",
     price: 187.92, change1h: 0.67, change24h: 4.21, change7d: 8.34,
     marketCap: 86400000000, volume24h: 4560000000, circulatingSupply: 460000000, maxSupply: null,
     network: "Solana", categories: ["Layer 1", "Smart Contracts"],
     sparkline: [172, 175, 178, 176, 180, 183, 185, 184, 186, 187],
   },
   {
-    id: 5, name: "XRP", symbol: "XRP", color: "bg-blue-400",
+    id: 5, name: "XRP", symbol: "XRP", coingeckoId: "ripple", color: "bg-blue-400",
     price: 2.41, change1h: -0.23, change24h: 0.89, change7d: -2.12,
     marketCap: 138000000000, volume24h: 5670000000, circulatingSupply: 57200000000, maxSupply: 100000000000,
     network: "XRP Ledger", categories: ["Layer 1", "Payments"],
     sparkline: [2.45, 2.42, 2.38, 2.40, 2.43, 2.39, 2.41, 2.40, 2.42, 2.41],
   },
   {
-    id: 6, name: "Cardano", symbol: "ADA", color: "bg-blue-600",
+    id: 6, name: "Cardano", symbol: "ADA", coingeckoId: "cardano", color: "bg-blue-600",
     price: 0.782, change1h: 0.45, change24h: -1.23, change7d: 2.67,
     marketCap: 28100000000, volume24h: 890000000, circulatingSupply: 35900000000, maxSupply: 45000000000,
     network: "Cardano", categories: ["Layer 1", "Smart Contracts"],
     sparkline: [0.76, 0.77, 0.78, 0.77, 0.79, 0.78, 0.77, 0.78, 0.79, 0.78],
   },
   {
-    id: 7, name: "Avalanche", symbol: "AVAX", color: "bg-red-500",
+    id: 7, name: "Avalanche", symbol: "AVAX", coingeckoId: "avalanche-2", color: "bg-red-500",
     price: 42.18, change1h: 0.89, change24h: 3.45, change7d: 5.67,
     marketCap: 17200000000, volume24h: 1230000000, circulatingSupply: 407000000, maxSupply: 720000000,
     network: "Avalanche", categories: ["Layer 1", "DeFi"],
     sparkline: [39.5, 40.1, 40.8, 41.2, 40.9, 41.5, 41.8, 42.0, 41.9, 42.1],
   },
   {
-    id: 8, name: "Polygon", symbol: "POL", color: "bg-violet-600",
+    id: 8, name: "Polygon", symbol: "POL", coingeckoId: "polygon", color: "bg-violet-600",
     price: 0.567, change1h: -0.12, change24h: 1.98, change7d: -0.45,
     marketCap: 5670000000, volume24h: 456000000, circulatingSupply: 10000000000, maxSupply: 10000000000,
     network: "Polygon", categories: ["Layer 2", "Scaling"],
     sparkline: [0.56, 0.55, 0.56, 0.57, 0.56, 0.57, 0.56, 0.57, 0.57, 0.56],
   },
   {
-    id: 9, name: "Chainlink", symbol: "LINK", color: "bg-blue-500",
+    id: 9, name: "Chainlink", symbol: "LINK", coingeckoId: "chainlink", color: "bg-blue-500",
     price: 18.92, change1h: 0.23, change24h: -0.67, change7d: 4.12,
     marketCap: 11800000000, volume24h: 678000000, circulatingSupply: 626000000, maxSupply: 1000000000,
     network: "Ethereum", categories: ["DeFi", "Oracle"],
     sparkline: [18.1, 18.3, 18.5, 18.4, 18.6, 18.7, 18.8, 18.9, 18.8, 18.9],
   },
   {
-    id: 10, name: "Dogecoin", symbol: "DOGE", color: "bg-amber-500",
+    id: 10, name: "Dogecoin", symbol: "DOGE", coingeckoId: "dogecoin", color: "bg-amber-500",
     price: 0.182, change1h: 1.23, change24h: 5.67, change7d: 12.34,
     marketCap: 26800000000, volume24h: 2340000000, circulatingSupply: 147000000000, maxSupply: null,
     network: "Dogecoin", categories: ["Meme"],
     sparkline: [0.16, 0.165, 0.17, 0.168, 0.172, 0.175, 0.178, 0.18, 0.179, 0.182],
   },
   {
-    id: 11, name: "Uniswap", symbol: "UNI", color: "bg-pink-500",
+    id: 11, name: "Uniswap", symbol: "UNI", coingeckoId: "uniswap", color: "bg-pink-500",
     price: 12.45, change1h: 0.56, change24h: 2.13, change7d: -1.89,
     marketCap: 9450000000, volume24h: 345000000, circulatingSupply: 759000000, maxSupply: 1000000000,
     network: "Ethereum", categories: ["DeFi", "DEX"],
     sparkline: [12.1, 12.2, 12.3, 12.4, 12.3, 12.5, 12.4, 12.45, 12.4, 12.45],
   },
   {
-    id: 12, name: "Shiba Inu", symbol: "SHIB", color: "bg-orange-400",
+    id: 12, name: "Shiba Inu", symbol: "SHIB", coingeckoId: "shiba-inu", color: "bg-orange-400",
     price: 0.0000234, change1h: 2.34, change24h: 8.92, change7d: 15.67,
     marketCap: 13800000000, volume24h: 1890000000, circulatingSupply: 589000000000000, maxSupply: null,
     network: "Ethereum", categories: ["Meme"],
     sparkline: [0.000020, 0.0000205, 0.000021, 0.0000215, 0.000022, 0.0000225, 0.000023, 0.0000232, 0.0000233, 0.0000234],
   },
   {
-    id: 13, name: "Arbitrum", symbol: "ARB", color: "bg-sky-500",
+    id: 13, name: "Arbitrum", symbol: "ARB", coingeckoId: "arbitrum", color: "bg-sky-500",
     price: 1.34, change1h: -0.45, change24h: 1.56, change7d: 3.21,
     marketCap: 5120000000, volume24h: 567000000, circulatingSupply: 3820000000, maxSupply: 10000000000,
     network: "Ethereum", categories: ["Layer 2", "Scaling"],
     sparkline: [1.29, 1.30, 1.31, 1.32, 1.31, 1.33, 1.32, 1.34, 1.33, 1.34],
   },
   {
-    id: 14, name: "Render", symbol: "RNDR", color: "bg-teal-500",
+    id: 14, name: "Render", symbol: "RNDR", coingeckoId: "render-token", color: "bg-teal-500",
     price: 9.87, change1h: 0.78, change24h: 3.45, change7d: 7.89,
     marketCap: 5230000000, volume24h: 456000000, circulatingSupply: 530000000, maxSupply: 536870912,
     network: "Solana", categories: ["AI", "GPU"],
     sparkline: [9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.85, 9.87],
   },
   {
-    id: 15, name: "Fetch.ai", symbol: "FET", color: "bg-emerald-500",
+    id: 15, name: "Fetch.ai", symbol: "FET", coingeckoId: "fetch-ai", color: "bg-emerald-500",
     price: 2.87, change1h: 1.12, change24h: 5.67, change7d: 11.23,
     marketCap: 7240000000, volume24h: 890000000, circulatingSupply: 2520000000, maxSupply: 2630000000,
     network: "Ethereum", categories: ["AI", "Machine Learning"],
     sparkline: [2.55, 2.60, 2.65, 2.70, 2.72, 2.78, 2.80, 2.83, 2.85, 2.87],
   },
   {
-    id: 16, name: "Immutable", symbol: "IMX", color: "bg-cyan-500",
+    id: 16, name: "Immutable", symbol: "IMX", coingeckoId: "immutable-x", color: "bg-cyan-500",
     price: 2.12, change1h: -0.34, change24h: 1.23, change7d: -2.45,
     marketCap: 3560000000, volume24h: 234000000, circulatingSupply: 1680000000, maxSupply: 2000000000,
     network: "Ethereum", categories: ["Gaming", "NFT"],
     sparkline: [2.15, 2.14, 2.13, 2.12, 2.11, 2.13, 2.12, 2.11, 2.12, 2.12],
   },
   {
-    id: 17, name: "Optimism", symbol: "OP", color: "bg-red-400",
+    id: 17, name: "Optimism", symbol: "OP", coingeckoId: "optimism", color: "bg-red-400",
     price: 3.56, change1h: 0.23, change24h: 2.34, change7d: 4.56,
     marketCap: 4890000000, volume24h: 345000000, circulatingSupply: 1374000000, maxSupply: 4294967296,
     network: "Ethereum", categories: ["Layer 2", "Scaling"],
     sparkline: [3.40, 3.42, 3.44, 3.46, 3.48, 3.50, 3.52, 3.54, 3.55, 3.56],
   },
   {
-    id: 18, name: "Pepe", symbol: "PEPE", color: "bg-green-500",
+    id: 18, name: "Pepe", symbol: "PEPE", coingeckoId: "pepe", color: "bg-green-500",
     price: 0.0000156, change1h: 3.45, change24h: 12.34, change7d: 25.67,
     marketCap: 6560000000, volume24h: 2340000000, circulatingSupply: 420690000000000, maxSupply: 420690000000000,
     network: "Ethereum", categories: ["Meme"],
     sparkline: [0.0000120, 0.0000125, 0.0000130, 0.0000135, 0.0000140, 0.0000145, 0.0000148, 0.0000150, 0.0000153, 0.0000156],
   },
   {
-    id: 19, name: "Sui", symbol: "SUI", color: "bg-sky-400",
+    id: 19, name: "Sui", symbol: "SUI", coingeckoId: "sui", color: "bg-sky-400",
     price: 4.23, change1h: 0.89, change24h: 3.67, change7d: 6.78,
     marketCap: 13400000000, volume24h: 1230000000, circulatingSupply: 3170000000, maxSupply: 10000000000,
     network: "Sui", categories: ["Layer 1", "Smart Contracts"],
     sparkline: [3.90, 3.95, 4.00, 4.05, 4.08, 4.10, 4.15, 4.18, 4.20, 4.23],
   },
   {
-    id: 20, name: "Aave", symbol: "AAVE", color: "bg-fuchsia-500",
+    id: 20, name: "Aave", symbol: "AAVE", coingeckoId: "aave", color: "bg-fuchsia-500",
     price: 287.45, change1h: 0.34, change24h: 1.89, change7d: 3.12,
     marketCap: 4310000000, volume24h: 345000000, circulatingSupply: 15000000, maxSupply: 16000000,
     network: "Ethereum", categories: ["DeFi", "Lending"],
@@ -234,6 +236,20 @@ function Sparkline({ data, positive }: { data: number[]; positive: boolean }) {
         points={points}
       />
     </svg>
+  )
+}
+
+/* ─── CoinAvatar Component ─── */
+function CoinAvatar({ coin, size = "size-7" }: { coin: Coin; size?: string }) {
+  const { logo } = useCoinGeckoLogo(coin.coingeckoId, "small")
+
+  return (
+    <Avatar className={size}>
+      {logo && <AvatarImage src={logo} alt={coin.name} />}
+      <AvatarFallback className={cn("text-[10px] font-bold text-white", coin.color)}>
+        {coin.symbol.slice(0, 2)}
+      </AvatarFallback>
+    </Avatar>
   )
 }
 
@@ -646,11 +662,7 @@ export function CryptoShowcase() {
                     {/* Name */}
                     <TableCell>
                       <div className="flex items-center gap-2.5">
-                        <Avatar className="size-7">
-                          <AvatarFallback className={cn("text-[10px] font-bold text-white", coin.color)}>
-                            {coin.symbol.slice(0, 2)}
-                          </AvatarFallback>
-                        </Avatar>
+                        <CoinAvatar coin={coin} />
                         <div>
                           <div className="flex items-center gap-1.5">
                             <span className="font-semibold text-sm">{coin.name}</span>
@@ -772,11 +784,7 @@ export function CryptoShowcase() {
               <div key={coin.id} className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="text-xs text-muted-foreground w-4">{i + 1}</span>
-                  <Avatar className="size-5">
-                    <AvatarFallback className={cn("text-[8px] font-bold text-white", coin.color)}>
-                      {coin.symbol.slice(0, 2)}
-                    </AvatarFallback>
-                  </Avatar>
+                  <CoinAvatar coin={coin} size="size-5" />
                   <span className="text-sm font-medium">{coin.symbol}</span>
                 </div>
                 <span className={cn("text-xs font-medium", pctColor(coin.change24h))}>
@@ -798,11 +806,7 @@ export function CryptoShowcase() {
               <div key={coin.id} className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="text-xs text-muted-foreground w-4">{i + 1}</span>
-                  <Avatar className="size-5">
-                    <AvatarFallback className={cn("text-[8px] font-bold text-white", coin.color)}>
-                      {coin.symbol.slice(0, 2)}
-                    </AvatarFallback>
-                  </Avatar>
+                  <CoinAvatar coin={coin} size="size-5" />
                   <span className="text-sm font-medium">{coin.symbol}</span>
                 </div>
                 <span className={cn("text-xs font-medium", pctColor(coin.change7d))}>
@@ -824,11 +828,7 @@ export function CryptoShowcase() {
               <div key={coin.id} className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="text-xs text-muted-foreground w-4">{i + 1}</span>
-                  <Avatar className="size-5">
-                    <AvatarFallback className={cn("text-[8px] font-bold text-white", coin.color)}>
-                      {coin.symbol.slice(0, 2)}
-                    </AvatarFallback>
-                  </Avatar>
+                  <CoinAvatar coin={coin} size="size-5" />
                   <span className="text-sm font-medium">{coin.symbol}</span>
                 </div>
                 <span className={cn("text-xs font-medium", pctColor(coin.change7d))}>

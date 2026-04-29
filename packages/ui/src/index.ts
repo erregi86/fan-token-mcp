@@ -1,6 +1,9 @@
 // Utilities
 export { cn } from "./lib/utils"
 
+// ─── Hooks ───
+export { useCoinGeckoLogo } from "./hooks"
+
 // ─── Form Controls ───
 export { Button, buttonVariants } from "./components/button"
 export type { ButtonProps } from "./components/button"
