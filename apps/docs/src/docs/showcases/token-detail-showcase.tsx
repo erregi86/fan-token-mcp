@@ -27,6 +27,7 @@ const TOKEN = {
   name: "Paris Saint-Germain Fan Token",
   symbol: "PSG",
   coingeckoId: "socios",
+  logoUrl: "https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/128/color/chz.png",
   rank: 487,
   price: 3.42,
   change1h: -0.28,
@@ -154,11 +155,9 @@ function PriceChart({ data, timeframe }: { data: number[]; timeframe: string }) 
 
 /* ─── TokenAvatar Component ─── */
 function TokenAvatar({ token, size = "size-10" }: { token: any; size?: string }) {
-  const { logo } = useCoinGeckoLogo(token.coingeckoId || "", "small")
-
   return (
     <Avatar className={size}>
-      {logo && <AvatarImage src={logo} alt={token.name} />}
+      <AvatarImage src={token.logoUrl} alt={token.name} />
       <AvatarFallback className="bg-blue-600 text-white font-bold text-sm">
         {token.symbol.slice(0, 3)}
       </AvatarFallback>
