@@ -108,46 +108,7 @@ export function DashboardShowcase() {
   return (
     <div className="h-[900px] overflow-hidden rounded-xl border border-border shadow-lg min-w-0">
       <SidebarProvider defaultOpen={false}>
-        {/* ─── Sidebar ─── */}
-        <Sidebar collapsible="icon">
-          <SidebarHeader>
-            <div className="flex items-center gap-2.5 px-2 py-1">
-              <div className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground text-sm font-bold">A</div>
-              <div>
-                <div className="text-sm font-semibold">Acme Inc</div>
-                <div className="text-[10px] text-muted-foreground">Enterprise</div>
-              </div>
-            </div>
-          </SidebarHeader>
-          <SidebarContent>
-            <SidebarGroup>
-              <SidebarGroupLabel>Platform</SidebarGroupLabel>
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  {NAV_ITEMS.map((item) => (
-                    <SidebarMenuItem key={item.label}>
-                      <SidebarMenuButton isActive={item.active}>
-                        <span>{item.icon}</span>
-                        <span>{item.label}</span>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  ))}
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
-          </SidebarContent>
-          <SidebarFooter>
-            <div className="flex items-center gap-2 px-2">
-              <Avatar>
-                <AvatarFallback>JD</AvatarFallback>
-              </Avatar>
-              <div className="flex-1 text-xs">
-                <div className="font-medium">John Doe</div>
-                <div className="text-muted-foreground">john@acme.com</div>
-              </div>
-            </div>
-          </SidebarFooter>
-        </Sidebar>
+       
 
         {/* ─── Main Content ─── */}
         <SidebarInset>
