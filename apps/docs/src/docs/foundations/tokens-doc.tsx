@@ -20,101 +20,120 @@ export function TokensDoc() {
   ]
 
   const darkNeutral = [
-    { name: "#0C0C0C", hex: "#0C0C0C" },
-    { name: "#181818", hex: "#181818" },
-    { name: "#242424", hex: "#242424" },
-    { name: "#2F2F2F", hex: "#2F2F2F" },
-    { name: "#3B3B3B", hex: "#3B3B3B" },
-    { name: "#464646", hex: "#464646" },
-    { name: "#525252", hex: "#525252" },
-    { name: "#5D5D5D", hex: "#5D5D5D" },
-    { name: "#696969", hex: "#696969" },
-    { name: "#747474", hex: "#747474" },
-    { name: "#808080", hex: "#808080" },
+    { name: "dark-neutral-0", hex: "#0C0C0C" },
+    { name: "dark-neutral-10", hex: "#181818" },
+    { name: "dark-neutral-20", hex: "#242424" },
+    { name: "dark-neutral-30", hex: "#2F2F2F" },
+    { name: "dark-neutral-40", hex: "#3B3B3B" },
+    { name: "dark-neutral-50", hex: "#464646" },
+    { name: "dark-neutral-60", hex: "#525252" },
+    { name: "dark-neutral-70", hex: "#5D5D5D" },
+    { name: "dark-neutral-80", hex: "#696969" },
+    { name: "dark-neutral-90", hex: "#747474" },
+    { name: "dark-neutral-100", hex: "#808080" },
   ]
 
   const lightNeutral = [
-    { name: "#8B8B8B", hex: "#8B8B8B" },
-    { name: "#979797", hex: "#979797" },
-    { name: "#A3A3A3", hex: "#A3A3A3" },
-    { name: "#AEAEAE", hex: "#AEAEAE" },
-    { name: "#BABABA", hex: "#BABABA" },
-    { name: "#C5C5C5", hex: "#C5C5C5" },
-    { name: "#D1D1D1", hex: "#D1D1D1" },
-    { name: "#DCDCDC", hex: "#DCDCDC" },
-    { name: "#E8E8E8", hex: "#E8E8E8" },
-    { name: "#F3F3F3", hex: "#F3F3F3" },
-    { name: "#FFFFFF", hex: "#FFFFFF" },
+    { name: "light-neutral-0", hex: "#FFFFFF" },
+    { name: "light-neutral-10", hex: "#F3F3F3" },
+    { name: "light-neutral-20", hex: "#E8E8E8" },
+    { name: "light-neutral-30", hex: "#DCDCDC" },
+    { name: "light-neutral-40", hex: "#D1D1D1" },
+    { name: "light-neutral-50", hex: "#C5C5C5" },
+    { name: "light-neutral-60", hex: "#BABABA" },
+    { name: "light-neutral-70", hex: "#AEAEAE" },
+    { name: "light-neutral-80", hex: "#A3A3A3" },
+    { name: "light-neutral-90", hex: "#979797" },
+    { name: "light-neutral-100", hex: "#8B8B8B" },
   ]
 
   const blue = [
-    { name: "#16212E", hex: "#16212E" },
-    { name: "#11345A", hex: "#11345A" },
-    { name: "#0C4786", hex: "#0C4786" },
-    { name: "#075AB2", hex: "#075AB2" },
-    { name: "#026DDE", hex: "#026DDE" },
-    { name: "#0076F4", hex: "#0076F4" },
-    { name: "#1A84F5", hex: "#1A84F5" },
-    { name: "#4D9FF7", hex: "#4D9FF7" },
-    { name: "#80BAF9", hex: "#80BAF9" },
-    { name: "#B2D6FC", hex: "#B2D6FC" },
-    { name: "#E5F1FE", hex: "#E5F1FE" },
+    { name: "blue-0", hex: "#E5F1FE" },
+    { name: "blue-10", hex: "#B2D6FC" },
+    { name: "blue-20", hex: "#80BAF9" },
+    { name: "blue-30", hex: "#4D9FF7" },
+    { name: "blue-40", hex: "#1A84F5" },
+    { name: "blue-50", hex: "#0076F4" },
+    { name: "blue-60", hex: "#026DDE" },
+    { name: "blue-70", hex: "#075AB2" },
+    { name: "blue-80", hex: "#0C4786" },
+    { name: "blue-90", hex: "#11345A" },
+    { name: "blue-100", hex: "#16212E" },
   ]
 
   const greenBranding = [
-    { name: "#2B2D16", hex: "#2B2D16" },
-    { name: "#505811", hex: "#505811" },
-    { name: "#75820C", hex: "#75820C" },
-    { name: "#99AC07", hex: "#99AC07" },
-    { name: "#BED702", hex: "#BED702" },
-    { name: "#D1EC00", hex: "#D1EC00" },
-    { name: "#D6EE1A", hex: "#D6EE1A" },
-    { name: "#DFF24D", hex: "#DFF24D" },
-    { name: "#E8F580", hex: "#E8F580" },
-    { name: "#F1F9B2", hex: "#F1F9B2" },
-    { name: "#FAFDE5", hex: "#FAFDE5" },
+    { name: "green-apple-0", hex: "#FAFDE5" },
+    { name: "green-apple-10", hex: "#F1F9B2" },
+    { name: "green-apple-20", hex: "#E8F580" },
+    { name: "green-apple-30", hex: "#DFF24D" },
+    { name: "green-apple-40", hex: "#D6EE1A" },
+    { name: "green-apple-50", hex: "#D1EC00" },
+    { name: "green-apple-60", hex: "#BED702" },
+    { name: "green-apple-70", hex: "#99AC07" },
+    { name: "green-apple-80", hex: "#75820C" },
+    { name: "green-apple-90", hex: "#505811" },
+    { name: "green-apple-100", hex: "#2B2D16" },
   ]
 
   const green = [
-    { name: "#162316", hex: "#162316" },
-    { name: "#113A11", hex: "#113A11" },
-    { name: "#0C510C", hex: "#0C510C" },
-    { name: "#076807", hex: "#076807" },
-    { name: "#027F02", hex: "#027F02" },
-    { name: "#008100", hex: "#008100" },
-    { name: "#1A961A", hex: "#1A961A" },
-    { name: "#4DAD4D", hex: "#4DAD4D" },
-    { name: "#80C580", hex: "#80C580" },
-    { name: "#B2DCB2", hex: "#B2DCB2" },
-    { name: "#E5F3E5", hex: "#E5F3E5" },
+    { name: "green-0", hex: "#E5F3E5" },
+    { name: "green-10", hex: "#B2DCB2" },
+    { name: "green-20", hex: "#80C580" },
+    { name: "green-30", hex: "#4DAD4D" },
+    { name: "green-40", hex: "#4DAD4D" },
+    { name: "green-50", hex: "#008A00" },
+    { name: "green-60", hex: "#027F02" },
+    { name: "green-70", hex: "#076807" },
+    { name: "green-80", hex: "#0C510C" },
+    { name: "green-90", hex: "#113A11" },
+    { name: "green-100", hex: "#162316" },
   ]
 
   const red = [
-    { name: "#2D1618", hex: "#2D1618" },
-    { name: "#561217", hex: "#561217" },
-    { name: "#800E16", hex: "#800E16" },
-    { name: "#A90915", hex: "#A90915" },
-    { name: "#D20514", hex: "#D20514" },
-    { name: "#E70314", hex: "#E70314" },
-    { name: "#E91C2C", hex: "#E91C2C" },
-    { name: "#EE4F5B", hex: "#EE4F5B" },
-    { name: "#F38189", hex: "#F38189" },
-    { name: "#F8B3B8", hex: "#F8B3B8" },
-    { name: "#FDE6E7", hex: "#FDE6E7" },
+    { name: "red-0", hex: "#FDE6E7" },
+    { name: "red-10", hex: "#F8B3B8" },
+    { name: "red-20", hex: "#F38189" },
+    { name: "red-30", hex: "#EE4F5B" },
+    { name: "red-40", hex: "#E91C2C" },
+    { name: "red-50", hex: "#E70314" },
+    { name: "red-60", hex: "#DD2200" },
+    { name: "red-70", hex: "#A90915" },
+    { name: "red-80", hex: "#800E16" },
+    { name: "red-90", hex: "#561217" },
+    { name: "red-100", hex: "#2D1618" },
   ]
 
   const orange = [
-    { name: "#FFF3E5", hex: "#FFF3E5" },
-    { name: "#FFDCB2", hex: "#FFDCB2" },
-    { name: "#FFC580", hex: "#FFC580" },
-    { name: "#FFAD4D", hex: "#FFAD4D" },
-    { name: "#FF961A", hex: "#FF961A" },
-    { name: "#FF8A00", hex: "#FF8A00" },
-    { name: "#E77D02", hex: "#E77D02" },
-    { name: "#B66207", hex: "#B66207" },
-    { name: "#85480C", hex: "#85480C" },
-    { name: "#542D11", hex: "#542D11" },
-    { name: "#231216", hex: "#231216" },
+    { name: "orange-0", hex: "#FFF3E5" },
+    { name: "orange-10", hex: "#FFDCB2" },
+    { name: "orange-20", hex: "#FFC580" },
+    { name: "orange-30", hex: "#FFAD4D" },
+    { name: "orange-40", hex: "#FF961A" },
+    { name: "orange-50", hex: "#FF8A00" },
+    { name: "orange-60", hex: "#E77D02" },
+    { name: "orange-70", hex: "#B66207" },
+    { name: "orange-80", hex: "#85480C" },
+    { name: "orange-90", hex: "#542D11" },
+    { name: "orange-100", hex: "#231216" },
+  ]
+
+  const darkBlue = [
+    { name: "dark-blue-0", hex: "#020817" },
+    { name: "dark-blue-10", hex: "#0F1423" },
+    { name: "dark-blue-20", hex: "#1B212E" },
+    { name: "dark-blue-30", hex: "#282D3A" },
+    { name: "dark-blue-40", hex: "#353945" },
+    { name: "dark-blue-50", hex: "#414651" },
+    { name: "dark-blue-60", hex: "#4E525D" },
+    { name: "dark-blue-70", hex: "#5B5E68" },
+    { name: "dark-blue-80", hex: "#676B74" },
+    { name: "dark-blue-90", hex: "#80838B" },
+    { name: "dark-blue-100", hex: "#9A9CA2" },
+  ]
+
+  const grey = [
+    { name: "grey-50", hex: "#EDF2F7" },
+    { name: "grey-60", hex: "#E2E8F0" },
   ]
 
   const renderColorGrid = (palette: typeof blue) => (
@@ -174,10 +193,13 @@ export function TokensDoc() {
         <h3 className="mt-6 text-lg font-semibold text-foreground">Light Neutral</h3>
         {renderColorGrid(lightNeutral)}
 
+        <h3 className="mt-6 text-lg font-semibold text-foreground">Dark Blue</h3>
+        {renderColorGrid(darkBlue)}
+
         <h3 className="mt-6 text-lg font-semibold text-foreground">Blue</h3>
         {renderColorGrid(blue)}
 
-        <h3 className="mt-6 text-lg font-semibold text-foreground">Green Branding</h3>
+        <h3 className="mt-6 text-lg font-semibold text-foreground">Green Apple</h3>
         {renderColorGrid(greenBranding)}
 
         <h3 className="mt-6 text-lg font-semibold text-foreground">Green</h3>
@@ -188,6 +210,9 @@ export function TokensDoc() {
 
         <h3 className="mt-6 text-lg font-semibold text-foreground">Orange</h3>
         {renderColorGrid(orange)}
+
+        <h3 className="mt-6 text-lg font-semibold text-foreground">Grey</h3>
+        {renderColorGrid(grey)}
       </div>
 
       <div>
