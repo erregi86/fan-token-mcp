@@ -6,11 +6,17 @@
 @custom-variant dark (&:is(.dark *));
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+  html {
+    height: 100%;
+    overflow: hidden;
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    height: 100%;
+    overflow: hidden;
     margin: 0;
+  }
+  * {
+    @apply border-border outline-ring/50;
   }
 }
