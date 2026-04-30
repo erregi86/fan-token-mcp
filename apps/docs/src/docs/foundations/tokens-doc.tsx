@@ -137,9 +137,9 @@ export function TokensDoc() {
   ]
 
   const renderColorGrid = (palette: typeof blue) => (
-    <div className="mt-4 grid grid-cols-6 gap-3 sm:grid-cols-11">
+    <div className="mt-4 grid grid-cols-5 gap-3 sm:grid-cols-6 md:grid-cols-10">
       {palette.map((c) => (
-        <div key={c.hex} className="overflow-hidden rounded-lg border border-border">
+        <div key={c.hex + c.name} className="overflow-hidden rounded-lg border border-border">
           <div className="flex h-16 items-center justify-center" style={{ backgroundColor: c.hex }}>
             <span className="sr-only">{c.name}</span>
           </div>
