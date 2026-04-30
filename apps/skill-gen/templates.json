@@ -1,16 +1,16 @@
 {
   "templates": {
     "dashboard": {
-      "minimal": ["header", "stats_grid", "recent_table"],
-      "full": ["header", "sidebar", "stats_grid", "charts", "recent_table", "activity_feed"]
+      "minimal": ["app_header", "stats_grid", "recent_table"],
+      "full": ["app_header", "sidebar", "stats_grid", "recent_table", "activity_feed"]
     },
     "landing": {
       "minimal": ["hero", "features_3col", "cta"],
-      "corporate": ["hero", "features_grid", "testimonials", "pricing", "faq", "footer_cta"]
+      "corporate": ["app_header", "hero", "features_grid", "testimonials", "pricing", "faq", "footer_cta"]
     },
     "backoffice": {
-      "minimal": ["header", "sidebar", "table", "pagination"],
-      "full": ["header", "sidebar", "filters", "table", "bulk_actions", "pagination"]
+      "minimal": ["app_header", "sidebar", "table", "pagination"],
+      "full": ["app_header", "sidebar", "filters", "table", "bulk_actions", "pagination"]
     }
   },
   "layouts": {
@@ -53,6 +53,10 @@
     "footer_cta": {
       "desc": "Final call-to-action section",
       "components": "Heading + Button"
+    },
+    "app_header": {
+      "desc": "Application header with branding, navigation, search, and actions",
+      "components": "AppHeader with AppHeaderLogo, AppHeaderNav, AppHeaderSearch, AppHeaderActions"
     }
   }
 }

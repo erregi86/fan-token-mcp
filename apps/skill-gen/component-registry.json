@@ -26,7 +26,13 @@
       { "name": "Pagination", "from": "fan-tokens", "usage": "page navigation", "subcomponents": ["PaginationContent", "PaginationItem", "PaginationLink", "PaginationPrevious", "PaginationNext"] }
     ],
     "header": [
-      { "name": "AppHeader", "from": "fan-tokens", "usage": "top navigation", "subcomponents": ["AppHeaderLogo", "AppHeaderNav", "AppHeaderNavItem", "AppHeaderActions", "AppHeaderActionButton"] }
+      { "name": "AppHeader", "from": "fan-tokens", "usage": "top navigation bar with logo, nav, search, and actions", "subcomponents": ["AppHeaderLogo", "AppHeaderNav", "AppHeaderNavItem", "AppHeaderSearch", "AppHeaderActions", "AppHeaderActionButton"], "props": ["className", "children"] },
+      { "name": "AppHeaderLogo", "from": "fan-tokens", "usage": "logo section in header", "props": ["className", "children"] },
+      { "name": "AppHeaderNav", "from": "fan-tokens", "usage": "navigation menu container", "props": ["className", "children"] },
+      { "name": "AppHeaderNavItem", "from": "fan-tokens", "usage": "individual nav item/button", "props": ["active", "className", "children", "onClick"] },
+      { "name": "AppHeaderSearch", "from": "fan-tokens", "usage": "search input with icon", "props": ["placeholder", "onSearch", "className"] },
+      { "name": "AppHeaderActions", "from": "fan-tokens", "usage": "action buttons container (right side)", "props": ["className", "children"] },
+      { "name": "AppHeaderActionButton", "from": "fan-tokens", "usage": "action button in header", "variants": ["default", "outline", "ghost"], "props": ["variant", "size", "className", "children"] }
     ]
   },
   "tokens": {
@@ -35,6 +41,7 @@
     "text": ["xs", "sm", "base", "lg", "xl", "2xl", "3xl", "4xl"]
   },
   "patterns": {
+    "app_header": "AppHeader with Logo, Nav items, Search, and Action buttons",
     "header": "AppHeader with logo, nav items, and actions",
     "sidebar": "Vertical navigation with grouped items",
     "table": "Data table with pagination and filters",

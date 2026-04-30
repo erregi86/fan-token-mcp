@@ -111,9 +111,11 @@ The skill uses components from the FanTokens library:
 
 **Feedback:** Alert, Toast
 
-**Navigation:** Tabs, Breadcrumb, Pagination, AppHeader
+**Navigation:** Tabs, Breadcrumb, Pagination
 
-**Semantic tokens:** primary, secondary, destructive, success, warning, muted, background, foreground
+**Header:** AppHeader with Logo, Nav, Search, and Actions
+
+**Semantic tokens:** primary, secondary, destructive, success, warning, info, muted, background, foreground
 
 ---
 
