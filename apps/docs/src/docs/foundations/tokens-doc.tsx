@@ -1,4 +1,8 @@
 import { cn } from "fan-tokens/utils"
+import {
+  ComponentPage,
+  DemoSection,
+} from "../docs-layout"
 
 export function TokensDoc() {
   const colors = [
@@ -137,87 +141,87 @@ export function TokensDoc() {
   ]
 
   const renderColorGrid = (palette: typeof blue) => (
-    <div className="mt-4 grid grid-cols-5 gap-3 sm:grid-cols-6 md:grid-cols-10">
+    <div className="grid grid-cols-5 gap-2 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10">
       {palette.map((c) => (
         <div key={c.hex + c.name} className="overflow-hidden rounded-lg border border-border">
           <div className="flex h-16 items-center justify-center" style={{ backgroundColor: c.hex }}>
             <span className="sr-only">{c.name}</span>
           </div>
-          <div className="bg-card px-2 py-1.5 text-xs text-muted-foreground font-mono">{c.name}</div>
+          <div className="bg-background px-2 py-1 text-xs text-muted-foreground font-mono text-center">{c.name}</div>
         </div>
       ))}
     </div>
   )
 
   return (
-    <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight">Design Tokens</h1>
-        <p className="mt-2 text-muted-foreground">Your brand colors, mapped to semantic roles.</p>
-      </div>
-
-      <div>
-        <h2 className="text-xl font-semibold">Core Colors</h2>
-        <div className="mt-4 grid grid-cols-4 gap-3">
+    <ComponentPage
+      name="Design Tokens"
+      description="Color tokens, palettes, and semantic role mappings."
+    >
+      <DemoSection title="Core Colors">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {colors.map((c) => (
             <div key={c.name} className="overflow-hidden rounded-lg border border-border">
               <div className={cn("flex h-20 items-center justify-center", c.var)}>
                 <span className={cn("text-xs font-medium", c.fg)}>{c.name}</span>
               </div>
-              <div className="bg-card px-3 py-2 text-xs text-muted-foreground font-mono">{c.var.replace("bg-", "")}</div>
+              <div className="bg-background px-3 py-2 text-xs text-muted-foreground font-mono">{c.var.replace("bg-", "")}</div>
             </div>
           ))}
         </div>
-      </div>
+      </DemoSection>
 
-      <div>
-        <h2 className="text-xl font-semibold">Status Colors</h2>
-        <div className="mt-4 grid grid-cols-4 gap-3">
+      <DemoSection title="Status Colors">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {status.map((c) => (
             <div key={c.name} className="overflow-hidden rounded-lg border border-border">
               <div className={cn("flex h-20 items-center justify-center", c.bg)}>
                 <span className={cn("text-xs font-medium", c.fg)}>{c.name}</span>
               </div>
-              <div className="bg-card px-3 py-2 text-xs text-muted-foreground font-mono">{c.bg.replace("bg-", "")}</div>
+              <div className="bg-background px-3 py-2 text-xs text-muted-foreground font-mono">{c.bg.replace("bg-", "")}</div>
             </div>
           ))}
         </div>
-      </div>
+      </DemoSection>
 
-      <div>
-        <h2 className="text-xl font-semibold">Color Palettes</h2>
-
-        <h3 className="mt-6 text-lg font-semibold text-foreground">Dark Neutral</h3>
+      <DemoSection title="Dark Neutral">
         {renderColorGrid(darkNeutral)}
+      </DemoSection>
 
-        <h3 className="mt-6 text-lg font-semibold text-foreground">Light Neutral</h3>
+      <DemoSection title="Light Neutral">
         {renderColorGrid(lightNeutral)}
+      </DemoSection>
 
-        <h3 className="mt-6 text-lg font-semibold text-foreground">Dark Blue</h3>
+      <DemoSection title="Dark Blue">
         {renderColorGrid(darkBlue)}
+      </DemoSection>
 
-        <h3 className="mt-6 text-lg font-semibold text-foreground">Blue</h3>
+      <DemoSection title="Blue">
         {renderColorGrid(blue)}
+      </DemoSection>
 
-        <h3 className="mt-6 text-lg font-semibold text-foreground">Green Apple</h3>
+      <DemoSection title="Green Apple">
         {renderColorGrid(greenBranding)}
+      </DemoSection>
 
-        <h3 className="mt-6 text-lg font-semibold text-foreground">Green</h3>
+      <DemoSection title="Green">
         {renderColorGrid(green)}
+      </DemoSection>
 
-        <h3 className="mt-6 text-lg font-semibold text-foreground">Red</h3>
+      <DemoSection title="Red">
         {renderColorGrid(red)}
+      </DemoSection>
 
-        <h3 className="mt-6 text-lg font-semibold text-foreground">Orange</h3>
+      <DemoSection title="Orange">
         {renderColorGrid(orange)}
+      </DemoSection>
 
-        <h3 className="mt-6 text-lg font-semibold text-foreground">Grey</h3>
+      <DemoSection title="Grey">
         {renderColorGrid(grey)}
-      </div>
+      </DemoSection>
 
-      <div>
-        <h2 className="text-xl font-semibold">Border & Ring</h2>
-        <div className="mt-4 flex gap-4">
+      <DemoSection title="Border & Ring">
+        <div className="flex gap-4">
           <div className="flex items-center gap-2">
             <div className="size-10 rounded-md border-2 border-border" />
             <span className="text-sm text-muted-foreground">border</span>
@@ -231,7 +235,7 @@ export function TokensDoc() {
             <span className="text-sm text-muted-foreground">ring</span>
           </div>
         </div>
-      </div>
-    </div>
+      </DemoSection>
+    </ComponentPage>
   )
 }
