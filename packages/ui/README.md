@@ -4,44 +4,42 @@ React component library with design tokens. 45 accessible, themeable components 
 
 ## Installation & Setup
 
-### 1. Install the package
+### 1. Install fan-tokens
 ```bash
 npm install fan-tokens
 # or
 pnpm add fan-tokens
 ```
 
-### 2. Add @tailwindcss/vite to vite.config.js (Tailwind v4)
-**IMPORTANT: Add it BEFORE the react plugin**
+### 2. Install Tailwind CSS v4 and the Vite plugin
+fan-tokens requires Tailwind v4 in your project. Install both packages as devDependencies:
+```bash
+npm install -D tailwindcss @tailwindcss/vite
+# or
+pnpm add -D tailwindcss @tailwindcss/vite
+```
 
-```js
+### 3. Add the Tailwind plugin to your Vite config
+In `vite.config.ts` (or `.js`), add `@tailwindcss/vite` BEFORE the `react()` plugin:
+```ts
 import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'  // ← Add this
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  plugins: [
-    tailwindcss(),    // ← Must come first
-    react(),
-  ],
+  plugins: [tailwindcss(), react()],
 })
 ```
 
-### 3. Update your main CSS file
-In your app's entry CSS file (e.g., `src/index.css` or `src/globals.css`):
-
+### 4. Update your main CSS
+In your main CSS file (e.g. `src/index.css`):
 ```css
 @import "tailwindcss";
 @source "../node_modules/fan-tokens/dist/**/*.{js,jsx,ts,tsx}";
 @import "fan-tokens/tokens";
 ```
 
-The `@source` directive tells Tailwind where to find your fan-tokens classes for content detection.
-
-### 4. Delete old config files
-If you have them from Tailwind v3, **remove these files**:
-- `postcss.config.js` — No longer needed with Tailwind v4
-- `tailwind.config.js` — Tailwind v4 uses native CSS configuration (see step 3)
+> **Note:** If your project has a `postcss.config.js` from a previous setup, delete it — it's not needed with `@tailwindcss/vite` and will conflict with Tailwind v4.
 
 ### That's it!
 You can now import components:
@@ -52,6 +50,9 @@ import { Badge } from "fan-tokens/badge"
 ```
 
 ## Common Pitfalls
+
+### ❌ `Cannot find module '@tailwindcss/vite'` when starting dev server
+→ You skipped step 2. Run `npm install -D tailwindcss @tailwindcss/vite`.
 
 ### ❌ PostCSS error: "@import tailwindcss not found"
 **Problem:** You still have an old `postcss.config.js` that tries to use PostCSS plugins.
