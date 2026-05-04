@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.2 — 2026-05-04
+
+- fix: move 151 component-level design token variables from :root to @theme block in components.css
+- Tailwind v4 consumers can now generate arbitrary utility classes that reference these variables (e.g. h-[var(--button-height)], rounded-[var(--card-radius)])
+- Discovered while testing v1.1.1 in fan-token-dashboard — components rendered without proper sizing, padding, and border-radius because Tailwind didn't materialize variable-based classes
+- colors.css :root and .dark blocks preserved (semantic colors continue to work via @theme inline mapping)
+
 ## 1.1.1 — 2026-05-04
 
 - docs: split Tailwind install into its own step

@@ -4,7 +4,7 @@
    Every visual property is traceable back to a design decision.
    ============================== */
 
-:root {
+@theme {
   /* ─── Button ─── */
   --button-radius: var(--radius-full);
   --button-font-size: var(--text-sm);
