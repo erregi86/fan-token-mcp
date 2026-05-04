@@ -18,7 +18,7 @@ import { ToggleGroup, ToggleGroupItem } from "fan-tokens/toggle-group"
 import { Progress } from "fan-tokens/progress"
 import { Tooltip } from "fan-tokens/tooltip"
 import { toast } from "fan-tokens/toast"
-import { AppHeader, AppHeaderLogo, AppHeaderNav, AppHeaderNavItem, AppHeaderActions, AppHeaderActionButton } from "fan-tokens"
+import { AppHeader, AppHeaderLogo, AppHeaderNav, AppHeaderNavItem, AppHeaderActions, AppHeaderActionButton, AppHeaderMenuItem, AppHeaderDataSticky } from "fan-tokens"
 
 /* ─── Data ─── */
 const FEATURES = [
@@ -100,6 +100,16 @@ export function LandingShowcase() {
 
   return (
     <div className="rounded-xl border border-border shadow-lg overflow-hidden bg-background">
+      {/* ─── Data Sticky ─── */}
+      <AppHeaderDataSticky
+        items={[
+          { label: "Active Users:", value: "10K+" },
+          { label: "Uptime:", value: "99.9%" },
+          { label: "Integrations:", value: "150+" },
+          { label: "Rating:", value: "4.9/5" },
+        ]}
+      />
+
       {/* ─── Navbar ─── */}
       <AppHeader>
         <AppHeaderLogo>
@@ -109,10 +119,10 @@ export function LandingShowcase() {
           </div>
         </AppHeaderLogo>
         <AppHeaderNav>
-          <AppHeaderNavItem>Features</AppHeaderNavItem>
-          <AppHeaderNavItem>Pricing</AppHeaderNavItem>
-          <AppHeaderNavItem>Docs</AppHeaderNavItem>
-          <AppHeaderNavItem>Blog</AppHeaderNavItem>
+          <AppHeaderMenuItem active>Features</AppHeaderMenuItem>
+          <AppHeaderMenuItem>Pricing</AppHeaderMenuItem>
+          <AppHeaderMenuItem>Docs</AppHeaderMenuItem>
+          <AppHeaderMenuItem>Blog</AppHeaderMenuItem>
         </AppHeaderNav>
         <AppHeaderActions>
           <AppHeaderActionButton variant="ghost" size="sm" className="hidden sm:inline-flex">Sign in</AppHeaderActionButton>

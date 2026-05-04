@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "fan-t
 import { Separator } from "fan-tokens/separator"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "fan-tokens/accordion"
 import { Alert, AlertTitle, AlertDescription } from "fan-tokens/alert"
-import { AppHeader, AppHeaderLogo, AppHeaderNav, AppHeaderNavItem, AppHeaderActions, AppHeaderActionButton } from "fan-tokens"
+import { AppHeader, AppHeaderLogo, AppHeaderNav, AppHeaderNavItem, AppHeaderActions, AppHeaderActionButton, AppHeaderMenuItem, AppHeaderDataSticky } from "fan-tokens"
 
 const STEPS = [
   {
@@ -105,6 +105,15 @@ const FAQS = [
 export function HowToBuyFanTokensShowcase() {
   return (
     <div className="rounded-lg border border-border shadow-lg overflow-hidden bg-background">
+      {/* ─── Data Sticky ─── */}
+      <AppHeaderDataSticky
+        items={[
+          { label: "Supported Exchanges:", value: "50+" },
+          { label: "Trading Pairs:", value: "1000+" },
+          { label: "Daily Volume:", value: "$2B+" },
+        ]}
+      />
+
       {/* ─── NAVBAR ─── */}
       <AppHeader>
         <AppHeaderLogo>
@@ -114,9 +123,9 @@ export function HowToBuyFanTokensShowcase() {
           </div>
         </AppHeaderLogo>
         <AppHeaderNav>
-          <AppHeaderNavItem>Voting</AppHeaderNavItem>
-          <AppHeaderNavItem>Newsroom</AppHeaderNavItem>
-          <AppHeaderNavItem active>How to Buy</AppHeaderNavItem>
+          <AppHeaderMenuItem>Voting</AppHeaderMenuItem>
+          <AppHeaderMenuItem>Newsroom</AppHeaderMenuItem>
+          <AppHeaderMenuItem active>How to Buy</AppHeaderMenuItem>
         </AppHeaderNav>
         <AppHeaderActions>
           <AppHeaderActionButton size="sm">Get Alpha Alerts</AppHeaderActionButton>

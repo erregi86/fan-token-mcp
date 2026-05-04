@@ -1,4 +1,4 @@
-import { AppHeader, AppHeaderLogo, AppHeaderNav, AppHeaderNavItem, AppHeaderActions, AppHeaderActionButton, Card, CardHeader, CardTitle, CardContent, Separator, Badge, Table, TableHeader, TableBody, TableRow, TableHead, TableCell, Progress } from "fan-tokens"
+import { AppHeader, AppHeaderLogo, AppHeaderNav, AppHeaderNavItem, AppHeaderActions, AppHeaderActionButton, AppHeaderMenuItem, AppHeaderDataSticky, Card, CardHeader, CardTitle, CardContent, Separator, Badge, Table, TableHeader, TableBody, TableRow, TableHead, TableCell, Progress } from "fan-tokens"
 
 export default function GeneratedDashboard() {
   const stats = [
@@ -18,15 +18,25 @@ export default function GeneratedDashboard() {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Data Sticky */}
+      <AppHeaderDataSticky
+        items={[
+          { label: "Total Revenue:", value: "$45,231.89" },
+          { label: "Active Users:", value: "12,234" },
+          { label: "Conversion:", value: "3.2%" },
+          { label: "Growth:", value: "+4.3%" },
+        ]}
+      />
+
       {/* Header */}
       <AppHeader>
         <AppHeaderLogo>
           <span className="font-bold text-lg">Dashboard</span>
         </AppHeaderLogo>
         <AppHeaderNav>
-          <AppHeaderNavItem active>Overview</AppHeaderNavItem>
-          <AppHeaderNavItem>Analytics</AppHeaderNavItem>
-          <AppHeaderNavItem>Reports</AppHeaderNavItem>
+          <AppHeaderMenuItem active>Overview</AppHeaderMenuItem>
+          <AppHeaderMenuItem>Analytics</AppHeaderMenuItem>
+          <AppHeaderMenuItem>Reports</AppHeaderMenuItem>
         </AppHeaderNav>
         <AppHeaderActions>
           <AppHeaderActionButton variant="outline" size="sm">Settings</AppHeaderActionButton>

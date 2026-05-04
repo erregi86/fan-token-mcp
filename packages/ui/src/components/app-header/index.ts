@@ -6,6 +6,9 @@ export {
   AppHeaderSearch,
   AppHeaderActions,
   AppHeaderActionButton,
+  AppHeaderMobile,
+  AppHeaderDataSticky,
+  AppHeaderMenuItem,
 } from "./app-header"
 
 export type {
@@ -16,4 +19,8 @@ export type {
   AppHeaderSearchProps,
   AppHeaderActionsProps,
   AppHeaderActionButtonProps,
+  AppHeaderMobileProps,
+  AppHeaderDataStickyProps,
+  AppHeaderMenuItemProps,
+  DataItem,
 } from "./app-header"

@@ -31,7 +31,8 @@ import { Card } from "fan-tokens/card"
 ## Requirements
 
 - React 18 or 19
-- Tailwind CSS 4.x with `@tailwindcss/postcss`
+- Tailwind CSS 4.x with Vite
+- Node 18+ and pnpm 10+
 
 ## Components
 
@@ -66,13 +67,26 @@ The library ships CSS custom properties for colors (light/dark), typography, spa
 @import "fan-tokens/tokens/typography"; /* just typography */
 ```
 
-## Development
+## Development Setup
+
+Clone and install dependencies:
 
 ```bash
+git clone <repo-url>
+cd fan-token-mcp
 pnpm install
-pnpm dev          # start docs site
-pnpm build        # build library
-pnpm test         # run tests
+```
+
+Then run:
+
+```bash
+pnpm dev          # start docs site (port 5173)
+pnpm build        # build library to packages/ui/dist/
+pnpm build:docs   # build docs site
+pnpm test         # run tests in watch mode
+pnpm test:ci      # run tests once (CI)
+pnpm lint         # lint all packages
+pnpm typecheck    # TypeScript type checking
 ```
 
 ## License

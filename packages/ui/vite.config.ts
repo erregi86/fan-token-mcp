@@ -1,6 +1,7 @@
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
 import dts from "vite-plugin-dts"
+import tailwindcss from "@tailwindcss/vite"
 import { resolve } from "path"
 import { readdirSync } from "fs"
 
@@ -13,6 +14,7 @@ const componentEntries = Object.fromEntries(
 
 export default defineConfig({
   plugins: [
+    tailwindcss(),
     react(),
     dts({
       tsconfigPath: "./tsconfig.build.json",

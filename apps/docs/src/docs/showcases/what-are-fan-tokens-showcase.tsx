@@ -4,7 +4,7 @@ import { Badge } from "fan-tokens/badge"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "fan-tokens/card"
 import { Separator } from "fan-tokens/separator"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "fan-tokens/accordion"
-import { AppHeader, AppHeaderLogo, AppHeaderNav, AppHeaderNavItem, AppHeaderActions, AppHeaderActionButton } from "fan-tokens"
+import { AppHeader, AppHeaderLogo, AppHeaderNav, AppHeaderNavItem, AppHeaderActions, AppHeaderActionButton, AppHeaderMenuItem, AppHeaderDataSticky } from "fan-tokens"
 
 const TOKENS = [
   { symbol: "PSG", name: "Paris Saint-Germain", type: "Football", gradient: "from-blue-900 via-blue-700 to-slate-950", color: "#004170" },
@@ -66,6 +66,15 @@ const FAQS = [
 export function WhatAreFanTokensShowcase() {
   return (
     <div className="rounded-lg border border-border shadow-lg overflow-hidden bg-background">
+      {/* ─── Data Sticky ─── */}
+      <AppHeaderDataSticky
+        items={[
+          { label: "Total Fan Tokens:", value: "86" },
+          { label: "Active Communities:", value: "50+" },
+          { label: "Combined Market Cap:", value: "$10B+" },
+        ]}
+      />
+
       {/* ─── NAVBAR ─── */}
       <AppHeader>
         <AppHeaderLogo>
@@ -75,9 +84,9 @@ export function WhatAreFanTokensShowcase() {
           </div>
         </AppHeaderLogo>
         <AppHeaderNav>
-          <AppHeaderNavItem>Voting</AppHeaderNavItem>
-          <AppHeaderNavItem>Newsroom</AppHeaderNavItem>
-          <AppHeaderNavItem active>What Are Fan Tokens</AppHeaderNavItem>
+          <AppHeaderMenuItem>Voting</AppHeaderMenuItem>
+          <AppHeaderMenuItem>Newsroom</AppHeaderMenuItem>
+          <AppHeaderMenuItem active>What Are Fan Tokens</AppHeaderMenuItem>
         </AppHeaderNav>
         <AppHeaderActions>
           <AppHeaderActionButton size="sm">Get Alpha Alerts</AppHeaderActionButton>

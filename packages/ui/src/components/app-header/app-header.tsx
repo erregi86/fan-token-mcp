@@ -176,6 +176,84 @@ function AppHeaderActionButton({
   )
 }
 
+/* ─── AppHeaderMobile ─── */
+interface AppHeaderMobileProps extends React.HTMLAttributes<HTMLElement> {
+  onSearch?: () => void
+  onMenu?: () => void
+  children: ReactNode
+}
+
+function AppHeaderMobile({ className, onSearch, onMenu, children, ...props }: AppHeaderMobileProps) {
+  return (
+    <header
+      className={cn(
+        "border-b border-border bg-background flex items-center justify-between px-4 py-2 h-14 w-full",
+        className
+      )}
+      data-slot="app-header-mobile"
+      {...props}
+    >
+      {children}
+    </header>
+  )
+}
+
+/* ─── AppHeaderDataSticky ─── */
+interface DataItem {
+  label: string
+  value: string
+}
+
+interface AppHeaderDataStickyProps extends React.HTMLAttributes<HTMLElement> {
+  items: DataItem[]
+}
+
+function AppHeaderDataSticky({ className, items, ...props }: AppHeaderDataStickyProps) {
+  return (
+    <div
+      className={cn(
+        "border-b border-border bg-background flex gap-2 items-center px-4 py-3 w-full overflow-x-auto",
+        className
+      )}
+      data-slot="app-header-data-sticky"
+      {...props}
+    >
+      {items.map((item, idx) => (
+        <div
+          key={idx}
+          className="flex gap-1 items-center px-2 py-1 shrink-0"
+          data-slot="app-header-data-item"
+        >
+          <span className="text-sm text-muted-foreground font-semibold">{item.label}</span>
+          <span className="text-sm text-primary font-semibold">{item.value}</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+/* ─── AppHeaderMenuItem ─── */
+interface AppHeaderMenuItemProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  active?: boolean
+  children: ReactNode
+}
+
+function AppHeaderMenuItem({ className, active = false, children, ...props }: AppHeaderMenuItemProps) {
+  return (
+    <button
+      className={cn(
+        "px-2 py-4 flex items-center justify-center font-semibold text-sm transition-colors",
+        active ? "text-primary" : "text-foreground hover:text-primary/80",
+        className
+      )}
+      data-slot="app-header-menu-item"
+      {...props}
+    >
+      {children}
+    </button>
+  )
+}
+
 export {
   AppHeader,
   AppHeaderLogo,
@@ -184,6 +262,9 @@ export {
   AppHeaderSearch,
   AppHeaderActions,
   AppHeaderActionButton,
+  AppHeaderMobile,
+  AppHeaderDataSticky,
+  AppHeaderMenuItem,
 }
 
 export type {
@@ -194,4 +275,8 @@ export type {
   AppHeaderSearchProps,
   AppHeaderActionsProps,
   AppHeaderActionButtonProps,
+  AppHeaderMobileProps,
+  AppHeaderDataStickyProps,
+  AppHeaderMenuItemProps,
+  DataItem,
 }

@@ -132,6 +132,11 @@ export {
 export {
   AppHeader, AppHeaderLogo, AppHeaderNav, AppHeaderNavItem,
   AppHeaderSearch, AppHeaderActions, AppHeaderActionButton,
+  AppHeaderMobile, AppHeaderDataSticky, AppHeaderMenuItem,
+} from "./components/app-header"
+
+export type {
+  DataItem, AppHeaderDataStickyProps, AppHeaderMobileProps, AppHeaderMenuItemProps,
 } from "./components/app-header"
 
 // ─── Search ───
