@@ -13,13 +13,10 @@ import { Avatar, AvatarFallback, AvatarImage, useCoinGeckoLogo } from "fan-token
 import { Progress } from "fan-tokens/progress"
 import { Tooltip } from "fan-tokens/tooltip"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "fan-tokens/accordion"
-import { ScrollArea } from "fan-tokens/scroll-area"
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "fan-tokens/dropdown-menu"
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "fan-tokens/dialog"
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "fan-tokens/dialog"
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "fan-tokens/breadcrumb"
-import { Skeleton } from "fan-tokens/skeleton"
 import { Label } from "fan-tokens/label"
-import { Switch } from "fan-tokens/switch"
 import { Alert, AlertTitle, AlertDescription } from "fan-tokens/alert"
 
 /* ─── Mock Data ─── */
@@ -477,32 +474,32 @@ export function TokenDetailShowcase() {
                 <CardContent>
                   <Accordion type="single" collapsible>
                     <AccordionItem value="q1">
-                      <AccordionTrigger className="text-sm">What is a Fan Token?</AccordionTrigger>
-                      <AccordionContent className="text-sm text-muted-foreground">
+                      <AccordionTrigger value="q1" className="text-sm">What is a Fan Token?</AccordionTrigger>
+                      <AccordionContent value="q1" className="text-sm text-muted-foreground">
                         Fan Tokens are digital assets that represent a share of influence in a sports team or entertainment entity. They give holders the ability to participate in team decisions through voting on the Socios.com platform, as well as access to exclusive content, rewards, and experiences.
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="q2">
-                      <AccordionTrigger className="text-sm">How can I buy PSG Fan Tokens?</AccordionTrigger>
-                      <AccordionContent className="text-sm text-muted-foreground">
+                      <AccordionTrigger value="q2" className="text-sm">How can I buy PSG Fan Tokens?</AccordionTrigger>
+                      <AccordionContent value="q2" className="text-sm text-muted-foreground">
                         PSG Fan Tokens can be purchased on major cryptocurrency exchanges like Binance, Coinbase, and OKX. You can also buy them directly through the Socios.com app using the Chiliz (CHZ) token or credit/debit cards.
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="q3">
-                      <AccordionTrigger className="text-sm">What can I do with PSG tokens?</AccordionTrigger>
-                      <AccordionContent className="text-sm text-muted-foreground">
+                      <AccordionTrigger value="q3" className="text-sm">What can I do with PSG tokens?</AccordionTrigger>
+                      <AccordionContent value="q3" className="text-sm text-muted-foreground">
                         PSG token holders can vote in club polls, earn exclusive rewards and badges, access VIP experiences, purchase exclusive merchandise, and compete in leaderboard competitions for unique prizes. The more tokens you hold, the greater your influence.
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="q4">
-                      <AccordionTrigger className="text-sm">What blockchain is PSG built on?</AccordionTrigger>
-                      <AccordionContent className="text-sm text-muted-foreground">
+                      <AccordionTrigger value="q4" className="text-sm">What blockchain is PSG built on?</AccordionTrigger>
+                      <AccordionContent value="q4" className="text-sm text-muted-foreground">
                         PSG Fan Token is built on the Chiliz Chain, a purpose-built blockchain for sports and entertainment tokenization. Chiliz Chain is a Layer 1 EVM-compatible blockchain optimized for handling fan engagement and micro-transactions at scale.
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="q5">
-                      <AccordionTrigger className="text-sm">Is there a maximum supply of PSG tokens?</AccordionTrigger>
-                      <AccordionContent className="text-sm text-muted-foreground">
+                      <AccordionTrigger value="q5" className="text-sm">Is there a maximum supply of PSG tokens?</AccordionTrigger>
+                      <AccordionContent value="q5" className="text-sm text-muted-foreground">
                         Yes, the maximum supply of PSG Fan Tokens is capped at 20,000,000 tokens. Currently, approximately {fmtNum(TOKEN.circulatingSupply)} tokens ({supplyPct.toFixed(1)}%) are in circulation, with the remainder held in reserve and gradually released.
                       </AccordionContent>
                     </AccordionItem>

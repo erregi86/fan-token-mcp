@@ -347,8 +347,8 @@ export function HowToBuyFanTokensShowcase() {
           <Accordion type="single" collapsible>
             {FAQS.map((faq, idx) => (
               <AccordionItem key={idx} value={`faq-${idx}`}>
-                <AccordionTrigger className="text-left hover:no-underline">{faq.q}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+                <AccordionTrigger value={`faq-${idx}`} className="text-left hover:no-underline">{faq.q}</AccordionTrigger>
+                <AccordionContent value={`faq-${idx}`} className="text-muted-foreground">{faq.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

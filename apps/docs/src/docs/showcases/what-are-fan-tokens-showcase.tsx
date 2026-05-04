@@ -1,10 +1,9 @@
 import { cn } from "fan-tokens/utils"
 import { Button } from "fan-tokens/button"
 import { Badge } from "fan-tokens/badge"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "fan-tokens/card"
-import { Separator } from "fan-tokens/separator"
+import { Card, CardHeader, CardTitle, CardContent } from "fan-tokens/card"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "fan-tokens/accordion"
-import { AppHeader, AppHeaderLogo, AppHeaderNav, AppHeaderNavItem, AppHeaderActions, AppHeaderActionButton, AppHeaderMenuItem, AppHeaderDataSticky } from "fan-tokens"
+import { AppHeader, AppHeaderLogo, AppHeaderNav, AppHeaderActions, AppHeaderActionButton, AppHeaderMenuItem, AppHeaderDataSticky } from "fan-tokens"
 
 const TOKENS = [
   { symbol: "PSG", name: "Paris Saint-Germain", type: "Football", gradient: "from-blue-900 via-blue-700 to-slate-950", color: "#004170" },
@@ -259,8 +258,8 @@ export function WhatAreFanTokensShowcase() {
           <Accordion type="single" collapsible>
             {FAQS.map((faq, idx) => (
               <AccordionItem key={idx} value={`faq-${idx}`}>
-                <AccordionTrigger className="text-left hover:no-underline">{faq.q}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+                <AccordionTrigger value={`faq-${idx}`} className="text-left hover:no-underline">{faq.q}</AccordionTrigger>
+                <AccordionContent value={`faq-${idx}`} className="text-muted-foreground">{faq.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

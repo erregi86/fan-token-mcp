@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react"
 import dts from "vite-plugin-dts"
 import tailwindcss from "@tailwindcss/vite"
 import { resolve } from "path"
-import { readdirSync } from "fs"
+import { readdirSync, readFileSync } from "fs"
 
 const componentsDir = resolve(__dirname, "src/components")
 const componentEntries = Object.fromEntries(
@@ -11,6 +11,16 @@ const componentEntries = Object.fromEntries(
     .filter((d) => d.isDirectory())
     .map((d) => [`components/${d.name}/index`, resolve(componentsDir, d.name, "index.ts")])
 )
+
+// Load dependencies and peerDependencies from package.json
+const pkg = JSON.parse(readFileSync("./package.json", "utf-8"))
+const external = [
+  ...Object.keys(pkg.dependencies || {}),
+  ...Object.keys(pkg.peerDependencies || {}),
+  /^react($|\/)/,
+  /^react-dom($|\/)/,
+  /^@radix-ui\//,
+]
 
 export default defineConfig({
   plugins: [
@@ -31,12 +41,7 @@ export default defineConfig({
       formats: ["es", "cjs"],
     },
     rollupOptions: {
-      external: [
-        "react",
-        "react-dom",
-        "react/jsx-runtime",
-        /^react-dom\//,
-      ],
+      external,
       output: {
         preserveModules: true,
         preserveModulesRoot: "src",
