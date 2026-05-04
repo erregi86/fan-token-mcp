@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.3 — 2026-05-04
+
+- docs: add `body { ... }` styles to setup step 4 (apply --font-sans, --color-foreground, --color-background to <body>)
+- docs: warn about Vite template's leftover `:root` block in index.css and demo App.css conflicting with fan-tokens
+- docs: add new pitfall "Components render but the page looks unstyled" to common errors
+- Discovered while testing v1.1.2 in fan-token-dashboard and fan-token-settings consumer projects
+
 ## 1.1.2 — 2026-05-04
 
 - fix: move 151 component-level design token variables from :root to @theme block in components.css

@@ -32,12 +32,26 @@ export default defineConfig({
 ```
 
 ### 4. Update your main CSS
-In your main CSS file (e.g. `src/index.css`):
+
+Replace the entire content of your main CSS file (e.g. `src/index.css`) with:
+
 ```css
 @import "tailwindcss";
 @source "../node_modules/fan-tokens/dist/**/*.{js,jsx,ts,tsx}";
 @import "fan-tokens/tokens";
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-foreground);
+  background: var(--color-background);
+  margin: 0;
+  min-height: 100vh;
+}
 ```
+
+> **Important:** _replace_ the file content, don't just append. Vite's default template generates a `:root { ... }` block with custom font/color variables that will conflict with fan-tokens.
+>
+> Also: if your project has `src/App.css` from the Vite template, **delete it** and remove its import from `src/main.tsx` — it contains demo styles that pollute the design system.
 
 > **Note:** If your project has a `postcss.config.js` from a previous setup, delete it — it's not needed with `@tailwindcss/vite` and will conflict with Tailwind v4.
 
@@ -79,6 +93,14 @@ The path must point to the compiled files in `node_modules/fan-tokens/dist/`, no
 plugins: [tailwindcss(), react()],  // ✅ Correct
 plugins: [react(), tailwindcss()],  // ❌ Wrong
 ```
+
+### ❌ Components render but the page looks unstyled (wrong font, light grey text)
+
+**Problem:** Setup is complete but the page uses the browser's default font and text appears light grey instead of near-black. fan-tokens components themselves look correct, but everything around them feels "off".
+
+**Cause:** Either the `<body>` doesn't apply the design system's typography and colors, or your `src/index.css` still contains a `:root { ... }` block from the Vite template that overrides fan-tokens.
+
+**Solution:** See step 4. Make sure `src/index.css` is _exactly_ the 3 imports + body block, with no leftover `:root` or font-family declarations.
 
 ## Requirements
 - React 18+ or React 19+
